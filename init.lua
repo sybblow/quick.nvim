@@ -1,7 +1,10 @@
 require('basics')
+
+-- setup plugins, need to comment out first if you haven't installed these plugins by packer
 require('colors')
 require('telescope-config')
 require('coc-config')
+require('nvimtree-config')
 require('lualine').setup()
 
 require'nvim-treesitter.configs'.setup {
@@ -17,6 +20,7 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
+-- install plugins
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use {'neoclide/coc.nvim', branch = 'release'}
@@ -39,4 +43,7 @@ return require('packer').startup(function()
       require"surround".setup {mappings_style = "surround"}
     end
   }
+
+  -- Explorer
+  use 'kyazdani42/nvim-tree.lua'
 end)
