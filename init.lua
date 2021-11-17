@@ -20,12 +20,14 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
+require('treesitter-config')
+
 -- install plugins
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use {'neoclide/coc.nvim', branch = 'release'}
   use 'folke/tokyonight.nvim'
-  use 'nvim-treesitter/nvim-treesitter' 
+  use 'nvim-treesitter/nvim-treesitter'
   use 'tpope/vim-commentary'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'ThePrimeagen/git-worktree.nvim'
