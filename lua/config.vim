@@ -1,5 +1,5 @@
 " My Config
-let g:coc_global_extensions = ['coc-go', 'coc-json', 'coc-pyright', 'coc-tsserver', 'coc-clangd', 'coc-rls', 'coc-protobuf', 'coc-vimlsp', 'coc-snippets', 'coc-pairs', 'coc-highlight', 'coc-git']
+let g:coc_global_extensions = ['coc-go', 'coc-json', 'coc-pyright', 'coc-tsserver', 'coc-clangd', 'coc-rls', 'coc-protobuf', 'coc-vimlsp', 'coc-snippets', 'coc-pairs', 'coc-highlight', 'coc-git', 'coc-lua']
 
 " behavior
 set nowrap
@@ -19,12 +19,17 @@ command! -nargs=1 Silent
 nnoremap <silent> <F2> <cmd>lua require('telescope.builtin').buffers()<CR> 
 " Find file
 nnoremap <silent> <F3> <cmd>lua require('telescope.builtin').find_files()<CR>
+" Searches for the string under your cursor in your current working directory
+nnoremap <silent> <leader>/ <cmd>lua require('telescope.builtin').grep_string()<CR>
 
 " Command Key Copy/Paste
 " use command + c
+nnoremap <silent> <F12> "+y
 vnoremap <silent> <F12> "+y
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
 " Yank file name / path of current buffer in Vim
-noremap <silent> <F11> <cmd>let @+=expand("%")<CR>
+nnoremap <silent> <F11> <cmd>let @+=expand("%")<CR>
 " Git push to upstream automatically: https://github.com/tpope/vim-fugitive/issues/1272
 nnoremap <silent> <Leader>gp <cmd>Git -c push.default=current push<CR>
 
