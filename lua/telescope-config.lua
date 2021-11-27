@@ -1,6 +1,19 @@
 local telescope = require("telescope")
+local actions = require('telescope.actions')
 
-telescope.setup{
+telescope.setup {
+  defaults = {
+    mappings = {
+      i = {
+        ["<F2>"] = actions.close,
+        ["<F3>"] = actions.close,
+      },
+      n = {
+        ["<F2>"] = actions.close,
+        ["<F3>"] = actions.close,
+      },
+    },
+  },
   pickers = {
     find_files = {
       theme = "ivy",
