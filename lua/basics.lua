@@ -45,3 +45,5 @@ vim.g["netrw_winsize"] = 25
 vim.cmd [[
     au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
 ]]
+
+vim.cmd('source ' .. vim.fn.stdpath('config') .. '/lua/config.vim')

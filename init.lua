@@ -5,7 +5,13 @@ require('colors')
 require('telescope-config')
 require('coc-config')
 require('nvimtree-config')
-require('lualine').setup()
+require('lualine').setup{
+  -- options = {theme = 'iceberg_dark'}
+  options = {theme = 'pywal'}
+}
+-- require('neoscroll').setup {
+--   easing_function = "quadratic" -- Default easing function
+-- }
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
@@ -19,7 +25,6 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
-
 require('treesitter-config')
 
 -- install plugins
@@ -48,4 +53,10 @@ return require('packer').startup(function()
 
   -- Explorer
   use 'kyazdani42/nvim-tree.lua'
+  
+  -- Theme
+  use 'Mofiqul/vscode.nvim'
+  
+  -- Move & Search & replace
+  use 'karb94/neoscroll.nvim'
 end)
