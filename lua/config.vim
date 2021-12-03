@@ -16,9 +16,13 @@ command! -nargs=1 Silent
 \ | execute 'redraw!'
 
 " Find buffer
-nnoremap <silent> <F2> <cmd>lua require('telescope.builtin').buffers()<CR> 
+nnoremap <silent> <F2> <cmd>lua require('telescope.builtin').buffers()<CR>
+vnoremap <silent> <F2> <cmd>lua require('telescope.builtin').buffers()<CR>
+inoremap <silent> <F2> <cmd>lua require('telescope.builtin').buffers()<CR>
 " Find file
 nnoremap <silent> <F3> <cmd>lua require('telescope.builtin').find_files()<CR>
+vnoremap <silent> <F3> <cmd>lua require('telescope.builtin').find_files()<CR>
+inoremap <silent> <F3> <cmd>lua require('telescope.builtin').find_files()<CR>
 " Searches for the string under your cursor in your current working directory
 nnoremap <silent> <leader>/ <cmd>lua require('telescope.builtin').grep_string()<CR>
 
@@ -75,6 +79,7 @@ autocmd FileType gitcommit,conf setlocal nonumber norelativenumber
 
 " coc.vim
 nnoremap <silent> <space><space> <cmd>CocList<CR>
+nnoremap <silent> <space>c       <cmd>CocList commands<CR>
 
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)

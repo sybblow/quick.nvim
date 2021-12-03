@@ -7,7 +7,10 @@ require('coc-config')
 require('nvimtree-config')
 require('lualine').setup{
   -- options = {theme = 'iceberg_dark'}
-  options = {theme = 'pywal'}
+  options = { theme = 'onedark' },
+  sections = {
+    lualine_c = { 'filename', 'coc#status' },
+  }
 }
 -- require('neoscroll').setup {
 --   easing_function = "quadratic" -- Default easing function
@@ -56,7 +59,8 @@ return require('packer').startup(function()
   
   -- Theme
   use 'Mofiqul/vscode.nvim'
-  
+  use 'monsonjeremy/onedark.nvim'
+
   -- Move & Search & replace
   use 'karb94/neoscroll.nvim'
 end)
