@@ -35,5 +35,5 @@ function search_selection()
   local selection = vim.fn.getreg('a')
 
   vim.fn.setreg('a', a_save)
-  require('telescope.builtin').grep_string { search = selection }
+  require('telescope.builtin').grep_string { search = selection, use_regex = false }
 end
