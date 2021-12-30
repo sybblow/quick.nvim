@@ -1,2 +1,4 @@
 plugin
 quick.nvim.tgz
+
+lua/config.vim.local

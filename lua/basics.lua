@@ -45,6 +45,8 @@ vim.g["netrw_winsize"] = 25
 
 vim.cmd [[
     au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
+
+    filetype indent off
 ]]
 
 vim.cmd[[autocmd BufReadPost * lua goto_last_pos()]]
@@ -56,3 +58,7 @@ function goto_last_pos()
 end
 
 vim.cmd('source ' .. vim.fn.stdpath('config') .. '/lua/config.vim')
+local local_config = vim.fn.stdpath('config') .. '/lua/config.vim.local'
+if vim.fn.filereadable(local_config) == 1 then
+  vim.cmd('source ' .. local_config)
+end
