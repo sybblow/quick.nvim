@@ -28,12 +28,13 @@ nnoremap <silent> <leader>/ <cmd>lua require('telescope.builtin').grep_string()<
 
 " Command Key Copy/Paste
 " use command + c
-nnoremap <silent> <F12> "+y
-vnoremap <silent> <F12> "+y
-nnoremap <leader>y "+y
-vnoremap <leader>y "+y
+nmap <F12> <Plug>OSCYank
+vnoremap <F12> :OSCYank<CR>
+nmap <leader>y <Plug>OSCYank
+vnoremap <leader>y :OSCYank<CR>
+
 " Yank file name / path of current buffer in Vim
-nnoremap <silent> <F11> <cmd>let @+=expand("%")<CR>
+nnoremap <F11> <cmd>let @+=expand("%")<CR>
 " Git push to upstream automatically: https://github.com/tpope/vim-fugitive/issues/1272
 nnoremap <silent> <Leader>gp <cmd>Git -c push.default=current push<CR>
 
