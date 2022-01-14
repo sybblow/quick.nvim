@@ -52,8 +52,6 @@ vnoremap <leader>p "_dP
 " Simulate nv-ide:
 " Close All Buffers But This One
 nnoremap <silent> <leader>bda :bufdo bd<CR>
-" Invoke lazygit
-nnoremap <silent> <Leader>gg :Silent lazygit<CR>
 
 " Small completion window
 set pumheight=4
@@ -69,8 +67,6 @@ autocmd FileType vim setlocal expandtab
 " Reduce tab stop width for golang
 autocmd FileType go setlocal ts=4
 autocmd FileType go setlocal sw=4
-" Make lint output look like a compiler: https://gitlab.gugud.com/imk/phabricator/arcanist/commit/8f76800efc0e4eba65e47e8f17adc728408f717a
-autocmd FileType go,gomod setlocal makeprg=arc\ lint\ --output\ compiler
 " Configure rootPatterns for specified filetype: https://github.com/neoclide/coc.nvim/wiki/Using-workspaceFolders#persist-workspace-folders
 autocmd FileType go,gomod,json let b:coc_root_patterns = [ "config-ci.json", "doc.go", "doc_test.go", "go.mod", ".vim", ".git", ".hg", ".projections.json" ]
 " Enable spell check for git commit message

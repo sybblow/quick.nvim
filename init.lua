@@ -64,4 +64,9 @@ return require('packer').startup(function()
 
   -- Move & Search & replace
   use 'karb94/neoscroll.nvim'
+
+  -- Git
+  use 'tpope/vim-fugitive'
+  use 'shumphrey/fugitive-gitlab.vim'
+  use 'kdheepak/lazygit.nvim'
 end)

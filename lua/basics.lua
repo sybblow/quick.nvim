@@ -24,10 +24,6 @@ vim.o.mouse = 'a'
 
 vim.api.nvim_set_keymap('n', 'vs', ':vs<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'sp', ':sp<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-L>', '<C-W><C-L>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-H>', '<C-W><C-H>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-K>', '<C-W><C-K>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-J>', '<C-W><C-J>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'tn', ':tabnew<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'tk', ':tabnext<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'tj', ':tabprev<CR>', { noremap = true })
@@ -38,15 +34,20 @@ vim.api.nvim_set_keymap("n", "<leader>t", ":sp<CR> :term<CR> :resize 20N<CR> i",
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeFindFileToggle<CR>', {noremap = false, silent = true})
 vim.api.nvim_set_keymap('n', '<F7>', ':NvimTreeFindFileToggle<CR>', {noremap = false, silent = true})
+-- Git
+vim.api.nvim_set_keymap('n', '<leader>gf', ':20G<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap('n', '<leader>gg', ':LazyGit<CR>', {noremap = true, silent = false})
 
 vim.g["netrw_banner"] = 0
 vim.g["netrw_liststyle"] = 3
 vim.g["netrw_winsize"] = 25
 
 vim.cmd [[
-    au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
+    autocmd TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
 
     filetype indent off
+
+    autocmd BufNewFile,BufRead coc-settings.json setlocal filetype=jsonc
 ]]
 
 vim.cmd[[autocmd BufReadPost * lua goto_last_pos()]]
