@@ -5,6 +5,7 @@
         "json",
         "jsonc",
         "go",
+        "rust",
         "tf",
         "terraform"
     ],
