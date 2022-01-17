@@ -30,10 +30,12 @@ vim.api.nvim_set_keymap('n', 'tj', ':tabprev<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'to', ':tabo<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-S>', ':%s/', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-N>', ":Lexplore<CR> :vertical resize 30<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>t", ":sp<CR> :term<CR> :resize 20N<CR> i", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>t", ":sp<CR> :term<CR> :resize 20N<CR> i", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeFindFileToggle<CR>', {noremap = false, silent = true})
 vim.api.nvim_set_keymap('n', '<F7>', ':NvimTreeFindFileToggle<CR>', {noremap = false, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>t", ":TestNearest<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>T", ":TestFile<CR>", {noremap = true, silent = true})
 -- Git
 vim.api.nvim_set_keymap('n', '<leader>gf', ':20G<CR>', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<leader>gg', ':LazyGit<CR>', {noremap = true, silent = false})
@@ -41,6 +43,8 @@ vim.api.nvim_set_keymap('n', '<leader>gg', ':LazyGit<CR>', {noremap = true, sile
 vim.g["netrw_banner"] = 0
 vim.g["netrw_liststyle"] = 3
 vim.g["netrw_winsize"] = 25
+
+vim.g["test#strategy"] = "neovim" 
 
 vim.cmd [[
     autocmd TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
