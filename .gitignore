@@ -1,4 +1,5 @@
 plugin
 quick.nvim.tgz
 
-lua/config.vim.local
+/coc-settings.json
+/lua/config.vim.local
