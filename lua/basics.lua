@@ -52,6 +52,8 @@ vim.cmd [[
     filetype indent off
 
     autocmd BufNewFile,BufRead coc-settings.json setlocal filetype=jsonc
+
+    autocmd BufNewFile,BufRead config.vim.local setlocal filetype=vim
 ]]
 
 vim.cmd[[autocmd BufReadPost * lua goto_last_pos()]]
