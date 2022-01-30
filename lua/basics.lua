@@ -1,6 +1,6 @@
 vim.g.mapleader = ";"
 vim.o.number  =true
-vim.o.relativenumber = true
+vim.o.relativenumber = false
 vim.o.wrap = true
 vim.o.expandtab = true
 vim.o.incsearch = true
@@ -8,6 +8,7 @@ vim.o.tabstop = 2
 vim.o.cursorline = true
 vim.o.ignorecase = true
 vim.o.hlsearch = true
+vim.o.gdefault = true
 vim.o.swapfile = true
 vim.o.splitbelow = true
 vim.o.splitright = true

@@ -39,7 +39,7 @@ nnoremap <F11> <cmd>let @+=expand("%")<CR>
 nnoremap <silent> <Leader>gp <cmd>Git -c push.default=current push<CR>
 
 " Add `:B` command to switch to recent buffer
-nnoremap <silent> <leader>B <cmd>e #<CR>
+nnoremap <silent> <leader><TAB> <cmd>e #<CR>
 
 " delete without yanking
 nnoremap <leader>d "_d
@@ -51,7 +51,7 @@ vnoremap <leader>p "_dP
 
 " Simulate nv-ide:
 " Close All Buffers But This One
-nnoremap <silent> <leader>bda :bufdo bd<CR>
+nnoremap <silent> <leader>bad :bufdo Bclose<CR>
 
 " Small completion window
 set pumheight=4
@@ -68,7 +68,7 @@ autocmd FileType vim setlocal expandtab
 autocmd FileType go setlocal ts=4
 autocmd FileType go setlocal sw=4
 " Configure rootPatterns for specified filetype: https://github.com/neoclide/coc.nvim/wiki/Using-workspaceFolders#persist-workspace-folders
-autocmd FileType go,gomod,json let b:coc_root_patterns = [ "config-ci.json", "doc.go", "doc_test.go", "go.mod", ".vim", ".git", ".hg", ".projections.json" ]
+"autocmd FileType go,gomod,json let b:coc_root_patterns = [ "config-ci.json", "go.mod", ".git", ".hg", ".vim", ".projections.json" ]
 " Enable spell check for git commit message
 autocmd FileType gitcommit,conf setlocal spell spelllang=en_us
 autocmd FileType gitcommit,conf setlocal nonumber norelativenumber
@@ -140,3 +140,6 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add `:NoDiagnostic` command to disable diagnostics
+command! -nargs=0 NoDiagnostic :call coc#config('diagnostic.displayByAle', v:true)

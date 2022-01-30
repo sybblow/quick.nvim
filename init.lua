@@ -18,6 +18,8 @@ require('lualine').setup{
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
+  -- List of parsers to ignore installing
+  ignore_install = { "norg" },
   context_commentstring = {
     enable = true
   },
@@ -57,6 +59,7 @@ return require('packer').startup(function()
 
   -- Explorer
   use 'kyazdani42/nvim-tree.lua'
+  use 'rbgrouleff/bclose.vim'
   
   -- Theme
   use 'Mofiqul/vscode.nvim'
@@ -64,6 +67,7 @@ return require('packer').startup(function()
 
   -- Move & Search & replace
   use 'karb94/neoscroll.nvim'
+  use 'nelstrom/vim-visual-star-search'
 
   -- Git
   use 'tpope/vim-fugitive'
