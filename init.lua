@@ -50,6 +50,7 @@ return require('packer').startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {
     "blackCauldron7/surround.nvim",
     config = function()
@@ -60,7 +61,8 @@ return require('packer').startup(function()
   -- Explorer
   use 'kyazdani42/nvim-tree.lua'
   use 'rbgrouleff/bclose.vim'
-  
+  use 'wincent/terminus'
+
   -- Theme
   use 'Mofiqul/vscode.nvim'
   use 'monsonjeremy/onedark.nvim'

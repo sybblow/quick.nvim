@@ -1,8 +1,25 @@
 local telescope = require("telescope")
 local actions = require('telescope.actions')
+local previewers = require("telescope.previewers")
+
+local max_size = 10000
+local new_maker = function(filepath, bufnr, opts)
+  opts = opts or {}
+
+  filepath = vim.fn.expand(filepath)
+  vim.loop.fs_stat(filepath, function(_, stat)
+    if not stat then return end
+    if stat.size > max_size then
+      return
+    else
+      previewers.buffer_previewer_maker(filepath, bufnr, opts)
+    end
+  end)
+end
 
 telescope.setup {
   defaults = {
+    buffer_previewer_maker = new_maker,
     mappings = {
       i = {
         ["<F2>"] = actions.close,
@@ -18,10 +35,18 @@ telescope.setup {
     find_files = {
       theme = "ivy",
     }
+  },
+  extensions = {
+    fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = true,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+    }
   }
 }
 
-telescope.load_extension("git_worktree")
+telescope.load_extension("git_worktree", "fzf")
 
 vim.api.nvim_set_keymap('n', '<C-P>', "<cmd>lua require('telescope.builtin').find_files()<CR>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-F>', "<cmd>lua require('telescope.builtin').live_grep()<CR>", { noremap = true })
