@@ -46,11 +46,10 @@ return require('packer').startup(function()
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+  use { 'ibhagwan/fzf-lua',
+  -- optional for icon support
+    requires = { 'kyazdani42/nvim-web-devicons' }
   }
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {
     "blackCauldron7/surround.nvim",
     config = function()
