@@ -19,7 +19,7 @@ vim.o.numberwidth = 4
 vim.o.termguicolors = true
 -- vim.o.colorcolumn = '80'
 vim.o.showmode = false
-vim.o.showtabline = 2
+-- vim.o.showtabline = 2
 vim.o.signcolumn = 'yes'
 vim.o.mouse = 'a'
 

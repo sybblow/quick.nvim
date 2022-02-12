@@ -15,21 +15,6 @@ require('lualine').setup{
 -- require('neoscroll').setup {
 --   easing_function = "quadratic" -- Default easing function
 -- }
-
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
-  -- List of parsers to ignore installing
-  ignore_install = { "norg" },
-  context_commentstring = {
-    enable = true
-  },
-  highlight = {
-    enable = true
-  },
-  indent = {
-    enable = true
-  }
-}
 require('treesitter-config')
 
 -- install plugins
