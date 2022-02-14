@@ -1,25 +1,5 @@
-require('basics')
-
--- setup plugins, need to comment out first if you haven't installed these plugins by packer
-require('colors')
-require('telescope-config')
-require('coc-config')
-require('nvimtree-config')
-require('lualine').setup{
-  -- options = {theme = 'iceberg_dark'}
-  options = { theme = 'onedark' },
-  sections = {
-    lualine_c = { 'filename', 'coc#status' },
-  }
-}
--- require('neoscroll').setup {
---   easing_function = "quadratic" -- Default easing function
--- }
-require('treesitter-config')
-require('hlslens-config')
-
 -- install plugins
-return require('packer').startup(function()
+require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use {'neoclide/coc.nvim', branch = 'release'}
   use 'folke/tokyonight.nvim'
@@ -67,3 +47,24 @@ return require('packer').startup(function()
   -- Tool
   use 'vim-test/vim-test'
 end)
+
+
+require('basics')
+
+require('colors')
+require('telescope-config')
+require('coc-config')
+require('nvimtree-config')
+require('lualine').setup{
+  -- options = {theme = 'iceberg_dark'}
+  options = { theme = 'onedark' },
+  sections = {
+    lualine_c = { 'filename', 'coc#status' },
+  }
+}
+-- require('neoscroll').setup {
+--   easing_function = "quadratic" -- Default easing function
+-- }
+require('treesitter-config')
+
+require('hlslens-config')
