@@ -12,6 +12,10 @@ require('lualine').setup{
     lualine_c = { 'filename', 'coc#status' },
   }
 }
+require('hlslens').setup({
+    calm_down = true,
+    nearest_float_when = 'always'
+})
 -- require('neoscroll').setup {
 --   easing_function = "quadratic" -- Default easing function
 -- }
@@ -54,6 +58,9 @@ return require('packer').startup(function()
   -- Move & Search & replace
   use 'karb94/neoscroll.nvim'
   use 'nelstrom/vim-visual-star-search'
+  use 'kevinhwang91/nvim-hlslens'
+  use 'kana/vim-textobj-user'
+  use 'kana/vim-textobj-entire'
 
   -- Git
   use 'tpope/vim-fugitive'

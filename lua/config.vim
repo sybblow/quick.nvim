@@ -61,6 +61,7 @@ autocmd FileType go setlocal sw=4
 " Enable spell check for git commit message
 autocmd FileType gitcommit,conf setlocal spell spelllang=en_us
 autocmd FileType gitcommit,conf setlocal nonumber norelativenumber
+autocmd FileType gitcommit,conf setlocal textwidth=0
 
 
 " coc.vim
