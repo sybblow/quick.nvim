@@ -12,14 +12,11 @@ require('lualine').setup{
     lualine_c = { 'filename', 'coc#status' },
   }
 }
-require('hlslens').setup({
-    calm_down = true,
-    nearest_float_when = 'always'
-})
 -- require('neoscroll').setup {
 --   easing_function = "quadratic" -- Default easing function
 -- }
 require('treesitter-config')
+require('hlslens-config')
 
 -- install plugins
 return require('packer').startup(function()
