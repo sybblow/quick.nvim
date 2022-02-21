@@ -72,9 +72,6 @@ nnoremap <silent> <space>c       <cmd>CocList commands<CR>
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
-" Start multiple cursors session (replace text)
-nmap <silent> <C-d> <Plug>(coc-cursors-word)
-xmap <silent> <C-d> <Plug>(coc-cursors-range)
 " use normal command like `<leader>xi(`
 nmap <leader>x  <Plug>(coc-cursors-operator)
 
@@ -116,11 +113,6 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
   vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
-
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
