@@ -72,3 +72,6 @@ require('lualine').setup{
 require('treesitter-config')
 
 require('hlslens-config')
+
+-- map function keys to be used as command key shortcuts
+require('fn-keys')

@@ -17,13 +17,9 @@ command! -nargs=1 Silent
 
 " Command Key Copy/Paste
 " use command + c
-nmap <F12> <Plug>OSCYank
-vnoremap <F12> :OSCYank<CR>
 nmap <leader>y <Plug>OSCYank
 vnoremap <leader>y :OSCYank<CR>
 
-" Yank file name / path of current buffer in Vim
-nnoremap <F11> <cmd>let @+=expand("%")<CR>
 " Git push to upstream automatically: https://github.com/tpope/vim-fugitive/issues/1272
 nnoremap <silent> <Leader>gp <cmd>Git -c push.default=current push<CR>
 
