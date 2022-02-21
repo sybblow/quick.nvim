@@ -23,6 +23,13 @@ vim.o.showmode = false
 vim.o.signcolumn = 'yes'
 vim.o.mouse = 'a'
 
+vim.o.spellfile = vim.fn.stdpath('config') .. '/spell/en.utf-8.add'
+
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 1
+vim.opt.foldnestmax = 10
+vim.opt.foldenable = false
+
 vim.api.nvim_set_keymap('n', 'vs', ':vs<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'sp', ':sp<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'tn', ':tabnew<CR>', { noremap = true })

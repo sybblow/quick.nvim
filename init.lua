@@ -23,10 +23,14 @@ require('packer').startup(function()
     end
   }
 
+  -- Spell check
+  use 'kamykn/spelunker.vim'
+
   -- Explorer
   use 'kyazdani42/nvim-tree.lua'
   use 'rbgrouleff/bclose.vim'
   use 'wincent/terminus'
+  use 'mhinz/vim-startify'
 
   -- Theme
   use 'Mofiqul/vscode.nvim'
