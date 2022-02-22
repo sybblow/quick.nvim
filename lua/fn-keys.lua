@@ -18,7 +18,7 @@ vim.api.nvim_set_keymap('i', '<F6>', "<cmd>wa<CR>", { noremap = true, silent = f
 vim.api.nvim_set_keymap('n', '<F6>', "<cmd>wa<CR>", { noremap = true, silent = false })
 vim.api.nvim_set_keymap('v', '<F6>', "<cmd>wa<CR>", { noremap = true, silent = false })
 -- Show Tree
-vim.api.nvim_set_keymap('i', '<F7>', '<cmd>lua require("nvim-tree").toggle(false, true)<CR>', { noremap = false, silent = true })
+vim.api.nvim_set_keymap('i', '<F7>', '<cmd>lua require("nvim-tree").toggle(true, true)<CR>', { noremap = false, silent = true })
 vim.api.nvim_set_keymap('n', '<F7>', ':NvimTreeFindFileToggle<CR>', { noremap = false, silent = true })
 vim.api.nvim_set_keymap('v', '<F7>', '<ESC>:NvimTreeFindFileToggle<CR>', { noremap = false, silent = true })
 -- Quit

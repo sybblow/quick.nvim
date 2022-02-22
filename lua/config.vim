@@ -63,6 +63,7 @@ autocmd FileType gitcommit,conf setlocal textwidth=0
 " coc.vim
 nnoremap <silent> <space><space> <cmd>CocList<CR>
 nnoremap <silent> <space>c       <cmd>CocList commands<CR>
+nnoremap <silent> <space>g       <cmd>CocList gstatus<CR>
 
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)

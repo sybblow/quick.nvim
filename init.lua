@@ -56,7 +56,7 @@ end)
 require('basics')
 
 require('colors')
-require('telescope-config')
+require('fzf-config')
 require('coc-config')
 require('nvimtree-config')
 require('lualine').setup{
