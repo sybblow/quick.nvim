@@ -35,6 +35,7 @@ require('packer').startup(function()
   -- Theme
   use 'Mofiqul/vscode.nvim'
   use 'monsonjeremy/onedark.nvim'
+  use 'ellisonleao/gruvbox.nvim'
 
   -- Move & Search & replace
   use 'karb94/neoscroll.nvim'
