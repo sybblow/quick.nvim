@@ -32,11 +32,12 @@ vnoremap <leader>d "_d
 
 " replace currently selected text with default register
 " without yanking it
-vnoremap <leader>p "_dP
+vnoremap <leader>p "_c<C-r>"<Esc>
 
 " Simulate nv-ide:
 " Close All Buffers But This One
-nnoremap <silent> <leader>bad :bufdo Bclose<CR>
+nnoremap <leader>bad :bufdo Bclose<CR>
+nnoremap <leader>bD :Bclose!<CR>
 
 " Small completion window
 set pumheight=4

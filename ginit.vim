@@ -22,9 +22,9 @@ nnoremap <D-f> <cmd>lua require('fzf-lua').live_grep()<CR>
 vnoremap <D-f> <cmd>lua require('fzf-lua').grep_visual()<CR>
 tnoremap <D-f> <F2>
 
-inoremap <D-b> <cmd>lua require("nvim-tree").toggle(true, true)<CR>
-nnoremap <D-b> :NvimTreeFindFileToggle<CR>
-vnoremap <D-b> <ESC>:NvimTreeFindFileToggle<CR>
+inoremap <D-b> <cmd>VimRToggleTools<CR>
+nnoremap <D-b> <cmd>VimRToggleTools<CR> 
+vnoremap <D-b> <cmd>VimRToggleTools<CR> 
 
 inoremap <D-k> <cmd>tabprev<CR>
 nnoremap <D-k> <cmd>tabprev<CR>
