@@ -17,6 +17,8 @@ nnoremap <D-e> <cmd>lua require('fzf-lua').buffers()<CR>
 vnoremap <D-e> <cmd>lua require('fzf-lua').buffers()<CR>
 tnoremap <D-e> <F2>
 
+nunmap <C-F>
+
 inoremap <D-f> <ESC><cmd>lua require('fzf-lua').live_grep()<CR>
 nnoremap <D-f> <cmd>lua require('fzf-lua').live_grep()<CR>
 vnoremap <D-f> <cmd>lua require('fzf-lua').grep_visual()<CR>
