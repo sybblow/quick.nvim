@@ -1,9 +1,9 @@
 VimRSetFontAndSize "FiraCode Nerd Font Mono", 13
 
 " Command-D is Paste
-map <D-d>       "+gP
+map <D-d>       "+gp
 cmap <D-d>      <C-R>+
-tnoremap <D-d>  <C-\><C-n>"+gPa
+tnoremap <D-d>  <C-\><C-n>"+gpa
 
 " Pasting binoremap <D-p> <ESC><cmd>lua require('fzf-lua').files()<CR>
 nnoremap <D-p> <cmd>lua require('fzf-lua').files()<CR>
