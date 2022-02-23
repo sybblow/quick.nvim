@@ -64,7 +64,7 @@ require('lualine').setup{
   -- options = {theme = 'iceberg_dark'}
   options = { theme = 'onedark' },
   sections = {
-    lualine_c = { 'filename', 'coc#status' },
+    lualine_c = { 'filename', 'coc#status', 'b:coc_git_blame' },
   }
 }
 -- require('neoscroll').setup {
