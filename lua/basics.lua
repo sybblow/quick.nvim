@@ -23,6 +23,7 @@ vim.o.showmode = false
 vim.o.signcolumn = 'yes'
 vim.o.mouse = 'a'
 
+vim.o.spell = false -- disable builtin spell check
 vim.o.spellfile = vim.fn.stdpath('config') .. '/spell/en.utf-8.add'
 
 vim.opt.foldmethod = "indent"
