@@ -32,7 +32,7 @@ vnoremap <leader>d "_d
 
 " replace currently selected text with default register
 " without yanking it
-vnoremap <leader>p "_c<C-r>"<Esc>
+vnoremap <leader>p "_c<C-r>"<C-c>
 
 " Simulate nv-ide:
 " Close All Buffers But This One

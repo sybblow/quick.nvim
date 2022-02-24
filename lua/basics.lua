@@ -31,16 +31,16 @@ vim.opt.foldlevel = 1
 vim.opt.foldnestmax = 10
 vim.opt.foldenable = false
 
-vim.api.nvim_set_keymap('n', 'vs', ':vs<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', 'sp', ':sp<CR>', { noremap = true })
+--vim.api.nvim_set_keymap('n', 'vs', ':vs<CR>', { noremap = true })
+--vim.api.nvim_set_keymap('n', 'sp', ':sp<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'tn', ':tabnew<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'tk', ':tabprev<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'tj', ':tabnext<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'to', ':tabo<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-S>', ':%s/', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-N>', ":Lexplore<CR> :vertical resize 30<CR>", { noremap = true })
--- vim.api.nvim_set_keymap("n", "<leader>t", ":sp<CR> :term<CR> :resize 20N<CR> i", {noremap = true, silent = true})
--- vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap = true, silent = true})
+--vim.api.nvim_set_keymap('n', '<C-N>', ":Lexplore<CR> :vertical resize 30<CR>", { noremap = true })
+--vim.api.nvim_set_keymap("n", "<leader>t", ":sp<CR> :term<CR> :resize 20N<CR> i", {noremap = true, silent = true})
+--vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap = true, silent = true})
 -- Show Tree
 vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeFindFileToggle<CR>', {noremap = false, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>t", ":TestNearest<CR>", {noremap = true, silent = true})
