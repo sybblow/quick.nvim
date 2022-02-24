@@ -35,3 +35,7 @@ vnoremap <D-k> <cmd>tabprev<CR>
 inoremap <D-j> <cmd>tabnext<CR>
 nnoremap <D-j> <cmd>tabnext<CR>
 vnoremap <D-j> <cmd>tabnext<CR>
+
+" switch between command and insert mode
+inoremap <S-D-:> <ESC>:
+cnoremap <S-D-:> <ESC>a
