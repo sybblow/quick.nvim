@@ -29,14 +29,17 @@ tnoremap <D-f> <F2>
 inoremap <D-b> <cmd>VimRToggleTools<CR>
 nnoremap <D-b> <cmd>VimRToggleTools<CR> 
 vnoremap <D-b> <cmd>VimRToggleTools<CR> 
+tnoremap <D-b> <cmd>VimRToggleTools<CR> 
 
 inoremap <D-k> <cmd>tabprev<CR>
 nnoremap <D-k> <cmd>tabprev<CR>
 vnoremap <D-k> <cmd>tabprev<CR>
+tnoremap <D-k> <cmd>tabprev<CR>
 
 inoremap <D-j> <cmd>tabnext<CR>
 nnoremap <D-j> <cmd>tabnext<CR>
 vnoremap <D-j> <cmd>tabnext<CR>
+tnoremap <D-j> <cmd>tabnext<CR>
 
 " switch between command and insert mode
 inoremap <S-D-:> <C-c>:

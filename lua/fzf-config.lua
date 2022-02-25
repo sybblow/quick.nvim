@@ -1,4 +1,8 @@
 require('fzf-lua').setup {
+	files = {
+		cmd = "fd --color=never --type f --hidden --follow --exclude .git"
+	},
+
     keymap = {
         -- These override the default tables completely
         -- no need to set to `false` to disable a bind
