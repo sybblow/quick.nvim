@@ -64,7 +64,15 @@ require('lualine').setup{
   -- options = {theme = 'iceberg_dark'}
   options = { theme = 'onedark' },
   sections = {
-    lualine_c = { 'filename', 'coc#status', 'b:coc_git_blame' },
+    lualine_c = { 'coc#status', 'b:coc_git_blame' },
+  },
+  tabline = {
+    lualine_a = {'%.30{getcwd()}'},
+    lualine_b = {'%f'},
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {'tabs'}
   }
 }
 -- require('neoscroll').setup {

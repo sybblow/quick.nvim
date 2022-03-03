@@ -27,10 +27,6 @@ vim.api.nvim_set_keymap('i', '<F8>', '<cmd>qa<CR>', { noremap = true, silent = t
 vim.api.nvim_set_keymap('n', '<F8>', '<cmd>qa<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<F8>', '<cmd>qa<CR>', { noremap = true, silent = true })
 
--- Yank file name / path of current buffer in Vim
-vim.api.nvim_set_keymap('i', '<F11>', '<cmd>let @+=expand("%")<CR>', { noremap = true, silent = false })
-vim.api.nvim_set_keymap('n', '<F11>', '<cmd>let @+=expand("%")<CR>', { noremap = true, silent = false })
-vim.api.nvim_set_keymap('v', '<F11>', '<cmd>let @+=expand("%")<CR>', { noremap = true, silent = false })
 -- Command Key Copy/Paste
 -- use command + c
 vim.api.nvim_set_keymap('v', '<F12>', ":OSCYank<CR>", { noremap = true, silent = false })
