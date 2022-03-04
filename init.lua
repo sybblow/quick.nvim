@@ -68,7 +68,15 @@ require('lualine').setup{
   },
   tabline = {
     lualine_a = {'%.30{getcwd()}'},
-    lualine_b = {'%f'},
+    lualine_b = {
+      {
+        'filename',
+        file_status = true, -- Displays file status (readonly status, modified status)
+        path = 1, -- 0: Just the filename
+                  -- 1: Relative path
+                  -- 2: Absolute path
+      }
+    },
     lualine_c = {},
     lualine_x = {},
     lualine_y = {},
