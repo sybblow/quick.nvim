@@ -8,6 +8,8 @@ vim.api.nvim_set_keymap("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true
 vim.api.nvim_set_keymap("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
 vim.api.nvim_set_keymap("n", "K", ":call CocActionAsync('doHover')<CR>", {silent = true, noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>rn", "<Plug>(coc-rename)", {})
+vim.api.nvim_set_keymap("n", "<C-j>", "<cmd>CocNext<CR>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<C-k>", "<cmd>CocPrev<CR>", {silent = true, noremap = true})
 vim.api.nvim_set_keymap("n", "<space>j", "<cmd>CocNext<CR>", {silent = true, noremap = true})
 vim.api.nvim_set_keymap("n", "<space>k", "<cmd>CocPrev<CR>", {silent = true, noremap = true})
 vim.api.nvim_set_keymap("n", "<space>p", "<cmd>CocListResume<CR>", {silent = true, noremap = true})
