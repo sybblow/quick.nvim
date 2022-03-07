@@ -43,6 +43,7 @@ require('packer').startup(function()
   use 'kevinhwang91/nvim-hlslens'
   use 'kana/vim-textobj-user'
   use 'kana/vim-textobj-entire'
+  use 'IngoMeyer441/coc_current_word'
 
   -- Git
   use 'tpope/vim-fugitive'

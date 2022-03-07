@@ -24,5 +24,3 @@ vim.o.writebackup = false
 vim.o.updatetime = 300
 
 vim.g.coc_current_word_highlight_delay = 600
-
-vim.cmd[[autocmd CursorHold * silent call CocActionAsync('highlight')]]
