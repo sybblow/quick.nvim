@@ -14,9 +14,11 @@ vim.cmd[[
     "autocmd ColorScheme * highlight clear EndOfBuffer
     " make symbol highlight have a clear color.
     " wiki and tool: https://github.com/neoclide/coc-highlight
-    autocmd ColorScheme * highlight CurrentWord ctermbg=249 guibg=#675353
+    "autocmd ColorScheme * highlight CurrentWord ctermbg=242 guibg=#393f4a
     " make CursorLine have a clear color.
     autocmd ColorScheme * highlight CursorLine guibg=#28455c
+    autocmd ColorScheme * highlight Visual ctermbg=249 guibg=#675353
+    autocmd ColorScheme * highlight VisualNOS ctermbg=249 guibg=#675353
   augroup END
 
   " it must be added before any colorscheme is sourced.
