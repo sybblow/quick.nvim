@@ -80,3 +80,6 @@ require'nvim-tree'.setup {
     }
   }
 }
+
+-- Show Tree
+vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeFindFileToggle<CR>', {noremap = false, silent = true})

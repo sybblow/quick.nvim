@@ -60,7 +60,9 @@ require('basics')
 require('colors')
 require('fzf-config')
 require('coc-config')
-require('nvimtree-config')
+if vim.api.nvim_eval('has("gui_vimr")') == 0 then
+	require('nvimtree-config')
+end
 require('lualine').setup{
   -- options = {theme = 'iceberg_dark'}
   options = { theme = 'onedark' },

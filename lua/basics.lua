@@ -41,8 +41,6 @@ vim.api.nvim_set_keymap('n', '<C-S>', ':%s/', { noremap = true })
 --vim.api.nvim_set_keymap('n', '<C-N>', ":Lexplore<CR> :vertical resize 30<CR>", { noremap = true })
 --vim.api.nvim_set_keymap("n", "<leader>t", ":sp<CR> :term<CR> :resize 20N<CR> i", {noremap = true, silent = true})
 --vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap = true, silent = true})
--- Show Tree
-vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeFindFileToggle<CR>', {noremap = false, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>t", ":TestNearest<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>T", ":TestFile<CR>", {noremap = true, silent = true})
 -- Git
