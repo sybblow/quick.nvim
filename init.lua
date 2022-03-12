@@ -60,7 +60,7 @@ require('basics')
 require('colors')
 require('fzf-config')
 require('coc-config')
-if vim.api.nvim_eval('has("gui_vimr")') == 0 then
+if vim.fn.has('gui_vimr') == 0 then
 	require('nvimtree-config')
 end
 require('lualine').setup{
