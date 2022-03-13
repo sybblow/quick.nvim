@@ -1,5 +1,6 @@
 require('fzf-lua').setup {
 	files = {
+		-- previewer = "bat",
 		cmd = "fd --color=never --type f --hidden --follow --exclude .git"
 	},
 
