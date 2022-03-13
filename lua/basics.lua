@@ -61,6 +61,8 @@ vim.cmd [[
     autocmd BufNewFile,BufRead coc-settings.json setlocal filetype=jsonc
 
     autocmd BufNewFile,BufRead config.vim.local setlocal filetype=vim
+
+    autocmd FileType fzf let b:enable_spelunker_vim = 0
 ]]
 
 vim.cmd[[autocmd BufReadPost * lua goto_last_pos()]]

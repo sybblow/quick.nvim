@@ -44,3 +44,14 @@ tnoremap <D-j> <cmd>tabnext<CR>
 " switch between command and insert mode
 inoremap <S-D-:> <C-c>:
 cnoremap <S-D-:> <C-c>a
+
+" close window
+inoremap <D-y> <cmd>q<CR>
+nnoremap <D-y> <cmd>q<CR>
+vnoremap <D-y> <cmd>q<CR>
+
+" lazygit
+inoremap <D-g> <C-c><cmd>LazyGit<CR>
+nnoremap <D-g> <cmd>LazyGit<CR>
+vnoremap <D-g> <cmd>LazyGit<CR>
+tnoremap <D-g> q

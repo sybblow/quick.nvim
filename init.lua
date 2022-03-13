@@ -1,3 +1,8 @@
+-- startify-faq-10: skip Startify at start
+if vim.fn.has('gui_vimr') == 1 then
+	vim.g.startify_disable_at_vimenter = 1
+end
+
 -- install plugins
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
