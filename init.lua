@@ -57,6 +57,7 @@ require('packer').startup(function()
 
   -- Tool
   use 'vim-test/vim-test'
+  use 'bogado/file-line'
 end)
 
 
