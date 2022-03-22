@@ -82,7 +82,3 @@ function goto_last_pos()
 end
 
 vim.cmd('source ' .. vim.fn.stdpath('config') .. '/lua/config.vim')
-local local_config = vim.fn.stdpath('config') .. '/lua/config.vim.local'
-if vim.fn.filereadable(local_config) == 1 then
-  vim.cmd('source ' .. local_config)
-end

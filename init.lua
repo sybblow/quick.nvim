@@ -101,3 +101,9 @@ require('hlslens-config')
 
 -- map function keys to be used as command key shortcuts
 require('fn-keys')
+
+-- load local configuration in the end
+local local_config = vim.fn.stdpath('config') .. '/lua/config.vim.local'
+if vim.fn.filereadable(local_config) == 1 then
+  vim.cmd('source ' .. local_config)
+end
