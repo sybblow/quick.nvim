@@ -23,7 +23,7 @@ vnoremap <leader>y :OSCYank<CR>
 " Command-D is Paste
 " TODO: migrate to lua
 vnoremap <F11>  "+gp
-nnoremap <F11>  a<C-R>+<C-c>
+nnoremap <F11>  a<C-R>+<Esc>
 cnoremap <F11>  <C-R>+
 inoremap <F11>  <C-R>+
 tnoremap <F11>  <C-\><C-n>"+gpa
@@ -40,7 +40,7 @@ vnoremap <leader>d "_d
 
 " replace currently selected text with default register
 " without yanking it
-vnoremap <leader>p "_c<C-r>"<C-c>
+vnoremap <leader>p "_c<C-r>"<Esc>
 
 " Simulate nv-ide:
 " Close All Buffers But This One
