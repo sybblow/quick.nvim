@@ -1,7 +1,10 @@
 require('fzf-lua').setup {
 	files = {
 		-- previewer = "bat",
-		cmd = "fd --color=never --type f --hidden --follow --exclude .git"
+		git_icons = false,
+	},
+	grep = {
+		git_icons = false,
 	},
 
     keymap = {
