@@ -20,14 +20,6 @@ command! -nargs=1 Silent
 nmap <leader>y <Plug>OSCYank
 vnoremap <leader>y :OSCYank<CR>
 
-" Command-D is Paste
-" TODO: migrate to lua
-vnoremap <F11>  "+gp
-nnoremap <F11>  a<C-R>+<Esc>
-cnoremap <F11>  <C-R>+
-inoremap <F11>  <C-R>+
-tnoremap <F11>  <C-\><C-n>"+gpa
-
 " Git push to upstream automatically: https://github.com/tpope/vim-fugitive/issues/1272
 nnoremap <silent> <Leader>gp <cmd>Git -c push.default=current push<CR>
 
