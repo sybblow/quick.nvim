@@ -1,5 +1,5 @@
 " My Config
-let g:coc_global_extensions = ['coc-go', 'coc-json', 'coc-pyright', 'coc-tsserver', 'coc-clangd', 'coc-rust-analyzer', 'coc-protobuf', 'coc-vimlsp', 'coc-snippets', 'coc-pairs', 'coc-highlight', 'coc-git', 'coc-lua']
+let g:coc_global_extensions = ['coc-go', 'coc-json', 'coc-pyright', 'coc-tsserver', 'coc-clangd', 'coc-rust-analyzer', 'coc-protobuf', 'coc-vimlsp', 'coc-snippets', 'coc-pairs', 'coc-highlight', 'coc-lua']
 
 " behavior
 set nowrap

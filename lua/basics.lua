@@ -81,4 +81,9 @@ function goto_last_pos()
   end
 end
 
+function open_with_external_tool()
+	local linenr = vim.api.nvim_win_get_cursor(0)[1]
+	vim.cmd('silent! !idea --line ' .. tostring(linenr) .. ' "%"')
+end
+
 vim.cmd('source ' .. vim.fn.stdpath('config') .. '/lua/config.vim')

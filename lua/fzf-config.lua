@@ -4,6 +4,11 @@ require('fzf-lua').setup {
 		git_icons = false,
 	},
 	grep = {
+		previewer = "bat",
+		git_icons = false,
+	},
+	buffers = {
+		previewer = "bat",
 		git_icons = false,
 	},
 
