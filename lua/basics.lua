@@ -81,6 +81,9 @@ function goto_last_pos()
   end
 end
 
+--only available in Neovim 0.7.0+
+--vim.api.nvim_add_user_command('OpenInIDEA', 'lua open_with_external_tool()', {})
+vim.cmd[[command! OpenInIDEA lua open_with_external_tool()]]
 function open_with_external_tool()
 	local linenr = vim.api.nvim_win_get_cursor(0)[1]
 	vim.cmd('silent! !idea --line ' .. tostring(linenr) .. ' "%"')
