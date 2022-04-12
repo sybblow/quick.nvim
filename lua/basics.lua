@@ -60,6 +60,7 @@ vim.g.startify_lists = {
   { type = 'bookmarks', header = {'   Bookmarks'}             },
   { type = 'commands',  header = {'   Commands'}              },
 }
+vim.g.enable_spelunker_vim = 0
 
 vim.cmd [[
     autocmd TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}

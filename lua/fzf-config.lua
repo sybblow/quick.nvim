@@ -11,6 +11,11 @@ require('fzf-lua').setup {
 		previewer = "bat",
 		git_icons = false,
 	},
+	git = {
+		branches = {
+			preview = 'git log --pretty="-%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset" -n 20 --color=always {1}',
+		},
+	},
 
     keymap = {
         -- These override the default tables completely
@@ -51,9 +56,8 @@ require('fzf-lua').setup {
     },
 }
 
-vim.api.nvim_set_keymap('n', '<C-P>', "<cmd>lua require('fzf-lua').files()<CR>", { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-F>', "<cmd>lua require('fzf-lua').live_grep()<CR>", { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-E>', "<cmd>lua require('fzf-lua').buffers()<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-F>', "<cmd>lua require('fzf-lua').grep_curbuf()<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-P>', "<cmd>lua require('fzf-lua').builtin()<CR>", { noremap = true })
 vim.api.nvim_set_keymap('v', '<leader>/', "<cmd>lua require('fzf-lua').grep_visual()<CR>", { noremap = true, silent = true })
 -- Searches for the string under your cursor in your current working directory
 vim.api.nvim_set_keymap('n', '<leader>/', "<cmd>lua require('fzf-lua').grep_cword()<CR>", { noremap = true, silent = true })

@@ -6,6 +6,11 @@ vim.g.nvim_tree_icons = {
   git = {unstaged = "", staged = "✓", unmerged = "", renamed = "➜", untracked = ""},
   folder = {default = "", open = "", empty = "", empty_open = "", symlink = ""}
 }
+
+local function global_cd(node)
+  vim.cmd("cd " .. vim.fn.fnameescape(node.absolute_path))
+end
+
 -- following options are the default
 require'nvim-tree'.setup {
   -- disables netrw completely
@@ -49,7 +54,7 @@ require'nvim-tree'.setup {
     enable      = true,
     -- update the root directory of the tree to the one of the folder containing the file if the file is not under the current root directory
     -- only relevant when `update_focused_file.enable` is true
-    update_cwd  = true,
+    update_cwd  = false,
     -- list of buffer names / filetypes that will not update the cwd if the file isn't found under the current root directory
     -- only relevant when `update_focused_file.update_cwd` is true and `update_focused_file.enable` is true
     ignore_list = {}
@@ -76,7 +81,9 @@ require'nvim-tree'.setup {
       -- if true, it will only use your list to set the mappings
       custom_only = false,
       -- list of mappings to set on the tree manually
-      list = {}
+      list = {
+        { key = "<C-o>", action = "global_cd", action_cb = global_cd },
+      }
     }
   }
 }
