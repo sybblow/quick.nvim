@@ -4,11 +4,9 @@ require('fzf-lua').setup {
 		git_icons = false,
 	},
 	grep = {
-		previewer = "bat",
 		git_icons = false,
 	},
 	buffers = {
-		previewer = "bat",
 		git_icons = false,
 	},
 	git = {
@@ -17,6 +15,13 @@ require('fzf-lua').setup {
 		},
 	},
 
+    winopts = {
+        fullscreen = true, -- start fullscreen?
+        preview = {
+            vertical = 'down:61%', -- up|down:size
+            layout = 'vertical', -- horizontal|vertical|flex
+        },
+    },
     keymap = {
         -- These override the default tables completely
         -- no need to set to `false` to disable a bind
@@ -24,13 +29,14 @@ require('fzf-lua').setup {
         builtin = {
             -- neovim `:tmap` mappings for the fzf win
             ["<F1>"] = "toggle-help",
-            ["S-f"] = "toggle-fullscreen",
+            ["<F11>"] = "toggle-fullscreen",
             -- Only valid with the 'builtin' previewer
             ["<M-p>"] = "toggle-preview-wrap",
             -- ["<F4>"] = "toggle-preview",
             -- Rotate preview clockwise/counter-clockwise
             -- ["<F5>"] = "toggle-preview-ccw",
             -- ["<F6>"] = "toggle-preview-cw",
+            ["<F10>"] = "toggle-preview-cw",
             ["<S-down>"] = "preview-page-down",
             ["<S-up>"] = "preview-page-up",
             ["<S-left>"] = "preview-page-reset",
