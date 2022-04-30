@@ -1,5 +1,8 @@
 VimRSetFontAndSize "FiraCode Nerd Font Mono", 13
 
+" disable coc highlight
+CocCurrentWordToggle
+
 " Command-D is Paste
 vnoremap <D-d>  "+gp
 nnoremap <D-d>  a<C-R>+<Esc>
