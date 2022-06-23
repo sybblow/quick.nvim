@@ -7,9 +7,9 @@ vim.api.nvim_set_keymap('i', '<F3>', "<Esc><cmd>lua require('fzf-lua').files()<C
 vim.api.nvim_set_keymap('n', '<F3>', "<cmd>lua require('fzf-lua').files()<CR>", { noremap = true })
 vim.api.nvim_set_keymap('v', '<F3>', "<cmd>lua require('fzf-lua').files()<CR>", { noremap = true })
 -- Close
-vim.api.nvim_set_keymap('i', '<F4>', "<cmd>q<CR>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap('n', '<F4>', "<cmd>q<CR>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap('v', '<F4>', "<cmd>q<CR>", { noremap = true, silent = false })
+vim.api.nvim_set_keymap('i', '<F4>', "<cmd>close<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<F4>', "<cmd>close<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<F4>', "<cmd>close<CR>", { noremap = true, silent = true })
 -- Search file
 vim.api.nvim_set_keymap('i', '<F5>', "<Esc><cmd>lua require('fzf-lua').live_grep()<CR>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<F5>', "<cmd>lua require('fzf-lua').live_grep()<CR>", { noremap = true })
