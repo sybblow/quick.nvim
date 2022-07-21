@@ -73,7 +73,7 @@ require('lualine').setup{
   -- options = {theme = 'iceberg_dark'}
   options = { theme = 'onedark' },
   sections = {
-    lualine_c = { 'b:coc_git_blame' },
+    lualine_c = {'coc#status'},
   },
   tabline = {
     lualine_a = {'%.30{getcwd()}'},
@@ -86,7 +86,7 @@ require('lualine').setup{
                   -- 2: Absolute path
       }
     },
-    lualine_c = {'coc#status'},
+    lualine_c = {'b:coc_git_blame'},
     lualine_x = {},
     lualine_y = {},
     lualine_z = {'tabs'}
