@@ -10,6 +10,14 @@ cnoremap <D-d>  <C-R>+
 inoremap <D-d>  <C-R>+
 tnoremap <D-d>  <C-\><C-n>"+gpa
 
+" Fix builtin
+inoremap <D-z> <cmd>undo<CR>
+nnoremap <D-z> <cmd>undo<CR>
+vnoremap <D-z> <cmd>undo<CR>
+inoremap <S-D-z> <cmd>redo<CR>
+nnoremap <S-D-z> <cmd>redo<CR>
+vnoremap <S-D-z> <cmd>redo<CR>
+
 " fzf
 inoremap <D-p> <Esc><cmd>lua require('fzf-lua').files()<CR>
 nnoremap <D-p> <cmd>lua require('fzf-lua').files()<CR>
@@ -20,6 +28,10 @@ inoremap <D-e> <Esc><cmd>lua require('fzf-lua').buffers()<CR>
 nnoremap <D-e> <cmd>lua require('fzf-lua').buffers()<CR>
 vnoremap <D-e> <cmd>lua require('fzf-lua').buffers()<CR>
 tnoremap <D-e> <F2>
+
+inoremap <S-D-p> <Esc><cmd>lua require('fzf-lua').builtin()<CR>
+nnoremap <S-D-p> <cmd>lua require('fzf-lua').builtin()<CR>
+vnoremap <S-D-p> <cmd>lua require('fzf-lua').builtin()<CR>
 
 nunmap <C-P>
 nunmap <C-F>
