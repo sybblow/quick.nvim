@@ -21,18 +21,18 @@ require('packer').startup(function()
   -- optional for icon support
     requires = { 'kyazdani42/nvim-web-devicons' }
   }
-  use {
-    "blackCauldron7/surround.nvim",
-    config = function()
-      require"surround".setup {mappings_style = "surround"}
-    end
-  }
+  use 'tpope/vim-surround'
 
   -- Spell check
   use 'kamykn/spelunker.vim'
 
   -- Explorer
-  use 'kyazdani42/nvim-tree.lua'
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    }
+  }
   use 'rbgrouleff/bclose.vim'
   use 'wincent/terminus'
   use 'mhinz/vim-startify'
