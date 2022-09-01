@@ -26,6 +26,8 @@ vim.o.mouse = 'a'
 vim.o.spell = false -- disable builtin spell check
 vim.o.spellfile = vim.fn.stdpath('data') .. '/spell/en.utf-8.add'
 
+vim.opt.guifont = "FiraCode Nerd Font Mono:13"
+
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 1
 vim.opt.foldnestmax = 10
@@ -52,7 +54,7 @@ vim.g["netrw_banner"] = 0
 vim.g["netrw_liststyle"] = 3
 vim.g["netrw_winsize"] = 25
 
-vim.g["test#strategy"] = "neovim" 
+vim.g["test#strategy"] = "neovim"
 vim.g.startify_change_to_dir = 0
 vim.g.startify_lists = {
   { type = 'dir',       header = {'   MRU '.. vim.fn.getcwd()}},
