@@ -15,10 +15,11 @@ vim.api.nvim_set_keymap("n", "<space>k", "<cmd>CocPrev<CR>", {silent = true, nor
 vim.api.nvim_set_keymap("n", "<space>p", "<cmd>CocListResume<CR>", {silent = true, noremap = true})
 -- vim.api.nvim_set_keymap("n", "<leader>f", ":CocCommand prettier.formatFile<CR>", {noremap = true})
 vim.api.nvim_set_keymap("i", "<C-Space>", "coc#refresh()", { silent = true, expr = true })
-vim.api.nvim_set_keymap("i", "<TAB>", "pumvisible() ? '<C-n>' : '<TAB>'", {noremap = true, silent = true, expr = true})
-vim.api.nvim_set_keymap("i", "<S-TAB>", "pumvisible() ? '<C-p>' : '<C-h>'", {noremap = true, expr = true})
+-- vim.api.nvim_set_keymap("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1): <SID>check_back_space() ? "<Tab>" :coc#refresh()', {noremap = true, silent = true, expr = true})
+vim.api.nvim_set_keymap("i", "<S-TAB>", 'coc#pum#visible() ? coc#pum#prev(1) : "<C-h>"', {noremap = true, expr = true})
 -- :help i_CTRL-G_u
-vim.api.nvim_set_keymap("i", "<CR>", "pumvisible() ? coc#_select_confirm() : '<C-G>u<CR><C-R>=coc#on_enter()<CR>'", {silent = true, expr = true, noremap = true})
+vim.api.nvim_set_keymap("i", "<CR>", 'coc#pum#visible() ? coc#pum#confirm() : "<C-g>u<CR><c-r>=coc#on_enter()<CR>"', {silent = true, expr = true, noremap = true})
+vim.api.nvim_set_keymap("i", "<C-x><C-z>", 'coc#pum#visible() ? coc#pum#stop() : "<C-x><C-z>"', {silent = true, expr = true, noremap = true})
 vim.o.hidden = true
 vim.o.backup = false
 vim.o.writebackup = false
