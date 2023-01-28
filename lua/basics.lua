@@ -69,8 +69,6 @@ vim.cmd [[
 
     filetype indent off
 
-    autocmd BufNewFile,BufRead coc-settings.json setlocal filetype=jsonc
-
     autocmd BufNewFile,BufRead config.vim.local setlocal filetype=vim
 
     autocmd FileType fzf let b:enable_spelunker_vim = 0
@@ -89,7 +87,7 @@ end
 vim.cmd[[command! OpenInIDEA lua open_with_external_tool()]]
 function open_with_external_tool()
 	local linenr = vim.api.nvim_win_get_cursor(0)[1]
-	vim.cmd('silent! !idea --line ' .. tostring(linenr) .. ' "%"')
+	vim.cmd('silent! !goland --line ' .. tostring(linenr) .. ' "%"')
 end
 
 vim.cmd('source ' .. vim.fn.stdpath('config') .. '/lua/config.vim')
