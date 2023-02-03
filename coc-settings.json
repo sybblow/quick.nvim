@@ -1,4 +1,10 @@
 {
+	"list.normalMappings": {
+		"<C-j>": "do:exit",
+		"<C-k>": "do:exit"
+	},
+	"highlight.colors.enable": true,
+	"diagnostic.checkCurrentLine": true,
 	"workspace.workspaceFolderCheckCwd": false,
 	"workspace.bottomUpFiletypes": [
 		"*"
@@ -8,7 +14,8 @@
 		"go",
 		"python",
 		"json",
-		"jsonc"
+		"jsonc",
+		"rust"
 	],
 	"go.goplsEnv": {
 		"GO111MODULE": "off"
