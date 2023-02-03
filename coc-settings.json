@@ -1,0 +1,27 @@
+{
+	"workspace.workspaceFolderCheckCwd": false,
+	"workspace.bottomUpFiletypes": [
+		"*"
+	],
+	"json.format.enable": true,
+	"coc.preferences.formatOnSaveFiletypes": [
+		"go",
+		"python",
+		"json",
+		"jsonc"
+	],
+	"go.goplsEnv": {
+		"GO111MODULE": "off"
+	},
+	"go.goplsOptions": {
+		"expandWorkspaceToModule": false,
+		"directoryFilters": [
+			"-**/vendor"
+		]
+	},
+	"clangd.fallbackFlags": [
+		"-std=gnu++20"
+	],
+	"git.addGBlameToBufferVar": true,
+	"snippets.ultisnips.pythonPrompt": false
+}

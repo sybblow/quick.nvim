@@ -1,7 +1,6 @@
 plugin
 quick.nvim.tgz
 
-/coc-settings.json
 /lua/config.vim.local
 *.utf-8.add.spl
 
