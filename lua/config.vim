@@ -55,6 +55,7 @@ autocmd FileType go setlocal ts=4
 autocmd FileType go setlocal sw=4
 " Configure rootPatterns for specified filetype: https://github.com/neoclide/coc.nvim/wiki/Using-workspaceFolders#persist-workspace-folders
 autocmd FileType go,gomod let b:coc_root_patterns = [ "config-ci.json", "go.mod", ".git", ".hg", ".vim", ".projections.json" ]
+autocmd FileType tf let b:coc_root_patterns = [ "service.tf", ".git", ".hg", ".vim", ".projections.json" ]
 autocmd FileType gitcommit,conf setlocal nonumber norelativenumber
 autocmd FileType gitcommit,conf setlocal textwidth=0
 
