@@ -18,7 +18,7 @@ command! -nargs=1 Silent
 " Command Key Copy/Paste
 " use command + c
 nmap <leader>y <Plug>OSCYank
-vnoremap <leader>y :OSCYank<CR>
+vnoremap <leader>y :OSCYankVisual<CR>
 
 " Git push to upstream automatically: https://github.com/tpope/vim-fugitive/issues/1272
 nnoremap <silent> <Leader>gp <cmd>Git -c push.default=current push<CR>
