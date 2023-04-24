@@ -17,10 +17,34 @@
 		"jsonc",
 		"rust"
 	],
+	"languageserver": {
+		"terraform": {
+			"command": "terraform-ls",
+			"args": [
+				"serve"
+			],
+			"filetypes": [
+				"terraform",
+				"tf"
+			],
+			"initializationOptions": {},
+			"settings": {},
+			"rootPatterns": [
+				"service.tf",
+				".git",
+				".hg",
+				".vim",
+				".projections.json"
+			]
+		}
+	},
 	"go.goplsEnv": {
 		"GO111MODULE": "off"
 	},
 	"go.goplsOptions": {
+		"analyses": {
+			"shadow": true
+		},
 		"expandWorkspaceToModule": false,
 		"directoryFilters": [
 			"-**/vendor"
