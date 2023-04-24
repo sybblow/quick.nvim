@@ -4,8 +4,29 @@ local function global_cd(node)
   vim.cmd("cd " .. vim.fn.fnameescape(node.absolute_path))
 end
 
+local function on_attach(bufnr)
+  local api = require('nvim-tree.api')
+
+  local function opts(desc)
+    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  -- Mappings migrated from view.mappings.list
+  --
+  -- You will need to insert "your code goes here" for any mappings with a custom action_cb
+  vim.keymap.set('n', '<C-o>', function()
+    local node = api.tree.get_node_under_cursor()
+	global_cd(node)
+  end, opts('global_cd'))
+end
+
 -- following options are the default
 require'nvim-tree'.setup {
+  -- disables git
+  git = {
+    enable = false,
+    timeout = 200 -- (in ms)
+  },
   -- disables netrw completely
   disable_netrw       = false,
   -- hijack netrw window on startup
@@ -54,22 +75,22 @@ require'nvim-tree'.setup {
     args = {}
   },
 
+  -- log = {
+  --   enable = true,
+  --   truncate = false,
+  --   types = {
+  --     all = true,
+  --   },
+  -- },
+
+  -- on_attach = on_attach,
+
   view = {
     -- width of the window, can be either a number (columns) or a string in `%`, for left or right side placement
     width = 40,
     -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
     side = 'left',
-    mappings = {
-      -- custom only false will merge the list with the default mappings
-      -- if true, it will only use your list to set the mappings
-      custom_only = false,
-      -- list of mappings to set on the tree manually
-      list = {
-        { key = "<C-o>", action = "global_cd", action_cb = global_cd },
-      }
-    }
   }
 }
-
 -- Show Tree
 vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeFindFileToggle<CR>', {noremap = false, silent = true})
