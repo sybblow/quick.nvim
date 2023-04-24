@@ -8,7 +8,7 @@ require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use {'neoclide/coc.nvim', branch = 'release'}
   use 'folke/tokyonight.nvim'
-  use 'nvim-treesitter/nvim-treesitter'
+  use {'nvim-treesitter/nvim-treesitter', run=":TSUpdate"}
   use 'tpope/vim-commentary'
   use 'ojroques/vim-oscyank'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
