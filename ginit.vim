@@ -61,9 +61,9 @@ vnoremap <D-f> <cmd>lua require('fzf-lua').blines()<CR>
 tnoremap <D-f> <F2>
 
 inoremap <D-b> <cmd>VimRToggleTools<CR>
-nnoremap <D-b> <cmd>VimRToggleTools<CR> 
-vnoremap <D-b> <cmd>VimRToggleTools<CR> 
-tnoremap <D-b> <cmd>VimRToggleTools<CR> 
+nnoremap <D-b> <cmd>VimRToggleTools<CR>
+vnoremap <D-b> <cmd>VimRToggleTools<CR>
+tnoremap <D-b> <cmd>VimRToggleTools<CR>
 
 inoremap <D-k> <cmd>tabprev<CR>
 nnoremap <D-k> <cmd>tabprev<CR>
