@@ -22,8 +22,13 @@ nnoremap <S-D-z> <cmd>redo<CR>
 vnoremap <S-D-z> <cmd>redo<CR>
 " 2. from document (https://neovim.io/doc/user/visual.html#Select): From Visual mode, press CTRL-G.
 snoremap <D-c> <C-g>"+y<C-g>gv<C-g>
-inoremap <D-c> <nop>
 vnoremap <D-c> "+ygv
+inoremap <D-c> <nop>
+snoremap <D-x> <C-g>"+x
+vnoremap <D-x> "+x
+inoremap <D-x> <nop>
+
+" like emacs
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
 
