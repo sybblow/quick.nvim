@@ -4,11 +4,11 @@ VimRSetFontAndSize "FiraCode Nerd Font Mono", 13
 CocCurrentWordToggle
 
 " Command-D is Paste
-vnoremap <D-d>  "+gp
-nnoremap <D-d>  a<C-R>+<Esc>
-cnoremap <D-d>  <C-R>+
-inoremap <D-d>  <C-R>+
-tnoremap <D-d>  <C-\><C-n>"+gpa
+"  vnoremap <D-d>  "+gp
+"  nnoremap <D-d>  a<C-R>+<Esc>
+"  cnoremap <D-d>  <C-R>+
+"  inoremap <D-d>  <C-R>+
+"  tnoremap <D-d>  <C-\><C-n>"+gpa
 
 " Fix builtin
 inoremap <D-z> <cmd>undo<CR>
@@ -17,6 +17,12 @@ vnoremap <D-z> <cmd>undo<CR>
 inoremap <S-D-z> <cmd>redo<CR>
 nnoremap <S-D-z> <cmd>redo<CR>
 vnoremap <S-D-z> <cmd>redo<CR>
+" 2. from document (https://neovim.io/doc/user/visual.html#Select): From Visual mode, press CTRL-G.
+snoremap <D-c> <C-g>"+y<C-g>gv<C-g>
+inoremap <D-c> <nop>
+vnoremap <D-c> "+ygv
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>$
 
 " fzf
 inoremap <D-p> <Esc><cmd>lua require('fzf-lua').files()<CR>
@@ -70,3 +76,7 @@ inoremap <D-g> <Esc><cmd>LazyGit<CR>
 nnoremap <D-g> <cmd>LazyGit<CR>
 vnoremap <D-g> <cmd>LazyGit<CR>
 tnoremap <D-g> q
+
+" work like Windows GUI
+set selectmode=mouse
+startinsert
