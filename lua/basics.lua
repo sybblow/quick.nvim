@@ -64,6 +64,8 @@ vim.g.startify_lists = {
 }
 vim.g.enable_spelunker_vim = 0
 
+vim.g.rooter_manual_only = 1
+
 vim.cmd [[
     autocmd TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
 

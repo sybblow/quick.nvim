@@ -3,6 +3,9 @@ VimRSetFontAndSize "FiraCode Nerd Font Mono", 13
 " disable coc highlight
 CocCurrentWordToggle
 
+" turn on Rooter
+RooterToggle
+
 " Command-D is Paste
 "  vnoremap <D-d>  "+gp
 "  nnoremap <D-d>  a<C-R>+<Esc>
@@ -42,9 +45,14 @@ vnoremap <S-D-p> <cmd>lua require('fzf-lua').builtin()<CR>
 nunmap <C-P>
 nunmap <C-F>
 
-inoremap <D-f> <Esc><cmd>lua require('fzf-lua').live_grep()<CR>
-nnoremap <D-f> <cmd>lua require('fzf-lua').live_grep()<CR>
-vnoremap <D-f> <cmd>lua require('fzf-lua').grep_visual()<CR>
+inoremap <S-D-f> <Esc><cmd>lua require('fzf-lua').live_grep()<CR>
+nnoremap <S-D-f> <cmd>lua require('fzf-lua').live_grep()<CR>
+vnoremap <S-D-f> <cmd>lua require('fzf-lua').grep_visual()<CR>
+tnoremap <S-D-f> <F2>
+
+inoremap <D-f> <Esc><cmd>lua require('fzf-lua').blines()<CR>
+nnoremap <D-f> <cmd>lua require('fzf-lua').blines()<CR>
+vnoremap <D-f> <cmd>lua require('fzf-lua').blines()<CR>
 tnoremap <D-f> <F2>
 
 inoremap <D-b> <cmd>VimRToggleTools<CR>

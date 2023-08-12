@@ -54,6 +54,7 @@ require('packer').startup(function()
   use 'tpope/vim-fugitive'
   use 'shumphrey/fugitive-gitlab.vim'
   use 'kdheepak/lazygit.nvim'
+  use 'airblade/vim-rooter'
 
   -- Tool
   use 'vim-test/vim-test'
