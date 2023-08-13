@@ -32,4 +32,5 @@ vim.api.nvim_set_keymap('v', '<F11>', '"+gp', { noremap = true, silent = false }
 vim.api.nvim_set_keymap('t', '<F11>', '<C-\\><C-n>"+gpa', { noremap = true, silent = false })
 
 -- use command + c
-vim.api.nvim_set_keymap('v', '<F12>', ":OSCYankVisual<CR>", { noremap = true, silent = false })
+vim.api.nvim_set_keymap('x', '<F12>', ":OSCYankVisual<CR>gv", { noremap = true, silent = false })
+vim.api.nvim_set_keymap('s', '<F12>', "<C-g><cmd>OSCYankVisual<CR>gv<C-g>", { noremap = true, silent = false })

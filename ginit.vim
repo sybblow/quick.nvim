@@ -7,9 +7,8 @@ CocCurrentWordToggle
 RooterToggle
 
 " improve Paste.
-" if there is no cmd, no need to use no-remap.
-xmap <D-v> "+gp
-smap <D-v> <C-g>"+gp
+xnoremap <D-v> "+gp
+snoremap <D-v> <C-o>"+gp
 nnoremap <D-v> "+gp
 cnoremap <D-v> <cmd>set paste<CR><C-R>+<cmd>set nopaste<CR>
 inoremap <D-v> <cmd>set paste<CR><C-R>+<cmd>set nopaste<CR>
@@ -24,17 +23,23 @@ vnoremap <D-z> <cmd>undo<CR>
 inoremap <S-D-z> <cmd>redo<CR>
 nnoremap <S-D-z> <cmd>redo<CR>
 vnoremap <S-D-z> <cmd>redo<CR>
-" 2. from document (https://neovim.io/doc/user/visual.html#Select): From Visual mode, press CTRL-G.
-snoremap <D-c> <C-g>"+y<C-g>gv<C-g>
+" 2. from document (https://neovim.io/doc/user/visual.html#Select): From Visual mode, press CTRL-G. CTRL-O switches to Visual mode for the duration of one command.
+" it's also said in the doc: https://vi.stackexchange.com/questions/28089/is-it-possible-to-execute-keys-commands-in-select-mode/28090#28090.
+snoremap <D-c> <C-o>"+ygv<C-g>
 xnoremap <D-c> "+ygv
 inoremap <D-c> <nop>
-snoremap <D-x> <C-g>"+x
+nnoremap <D-c> <nop>
+snoremap <D-x> <C-o>"+x
 xnoremap <D-x> "+x
 inoremap <D-x> <nop>
+nnoremap <D-x> <nop>
 
 " like emacs
+" ':help ins-special-special' suggests using CTRL-O.
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
+snoremap <C-a> <C-o>^
+snoremap <C-e> <C-o>$
 
 " fzf
 inoremap <D-p> <Esc><cmd>lua require('fzf-lua').files()<CR>
@@ -62,6 +67,7 @@ tnoremap <S-D-f> <F2>
 inoremap <D-f> <Esc><cmd>lua require('fzf-lua').blines()<CR>
 nnoremap <D-f> <cmd>lua require('fzf-lua').blines()<CR>
 xmap <D-f> *
+" CTRL-G switches to Visual mode.
 smap <D-f> <C-g>*
 tnoremap <D-f> <F2>
 
