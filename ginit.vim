@@ -6,12 +6,16 @@ CocCurrentWordToggle
 " turn on Rooter
 RooterToggle
 
-" Command-D is Paste
-"  vnoremap <D-d>  "+gp
-"  nnoremap <D-d>  a<C-R>+<Esc>
-"  cnoremap <D-d>  <C-R>+
-"  inoremap <D-d>  <C-R>+
-"  tnoremap <D-d>  <C-\><C-n>"+gpa
+" improve Paste.
+" if there is no cmd, no need to use no-remap.
+xmap <D-v> "+gp
+smap <D-v> <C-g>"+gp
+nnoremap <D-v> "+gp
+cnoremap <D-v> <cmd>set paste<CR><C-R>+<cmd>set nopaste<CR>
+inoremap <D-v> <cmd>set paste<CR><C-R>+<cmd>set nopaste<CR>
+" ':help terminal-input' says:
+" To simulate i_CTRL-R in terminal-mode:
+tnoremap <D-v> <C-\><C-n>"+gpa
 
 " Fix builtin
 inoremap <D-z> <cmd>undo<CR>
@@ -22,10 +26,10 @@ nnoremap <S-D-z> <cmd>redo<CR>
 vnoremap <S-D-z> <cmd>redo<CR>
 " 2. from document (https://neovim.io/doc/user/visual.html#Select): From Visual mode, press CTRL-G.
 snoremap <D-c> <C-g>"+y<C-g>gv<C-g>
-vnoremap <D-c> "+ygv
+xnoremap <D-c> "+ygv
 inoremap <D-c> <nop>
 snoremap <D-x> <C-g>"+x
-vnoremap <D-x> "+x
+xnoremap <D-x> "+x
 inoremap <D-x> <nop>
 
 " like emacs
@@ -57,7 +61,8 @@ tnoremap <S-D-f> <F2>
 
 inoremap <D-f> <Esc><cmd>lua require('fzf-lua').blines()<CR>
 nnoremap <D-f> <cmd>lua require('fzf-lua').blines()<CR>
-vnoremap <D-f> <cmd>lua require('fzf-lua').blines()<CR>
+xmap <D-f> *
+smap <D-f> <C-g>*
 tnoremap <D-f> <F2>
 
 inoremap <D-b> <cmd>VimRToggleTools<CR>
