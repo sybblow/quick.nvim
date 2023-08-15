@@ -6,12 +6,20 @@ CocCurrentWordToggle
 " turn on Rooter
 RooterToggle
 
+" improve select all
+xmap <D-a> ae
+smap <D-a> <C-o>ae<C-g>
+nmap <D-a> vae
+imap <D-a> <C-o>vae<C-g>
+cnoremap <D-a> <nop>
+tnoremap <D-a> <nop>
+
 " improve Paste.
 xnoremap <D-v> "+gp
 snoremap <D-v> <C-o>"+gp
 nnoremap <D-v> "+gp
-cnoremap <D-v> <cmd>set paste<CR><C-R>+<cmd>set nopaste<CR>
 inoremap <D-v> <cmd>set paste<CR><C-R>+<cmd>set nopaste<CR>
+cnoremap <D-v> <cmd>set paste<CR><C-R>+<cmd>set nopaste<CR>
 " ':help terminal-input' says:
 " To simulate i_CTRL-R in terminal-mode:
 tnoremap <D-v> <C-\><C-n>"+gpa
