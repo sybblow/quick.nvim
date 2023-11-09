@@ -20,9 +20,6 @@ command! -nargs=1 Silent
 nmap <leader>y <Plug>OSCYank
 vnoremap <leader>y :OSCYankVisual<CR>
 
-" Git push to upstream automatically: https://github.com/tpope/vim-fugitive/issues/1272
-nnoremap <silent> <Leader>gp <cmd>Git -c push.default=current push<CR>
-
 " Add `:B` command to switch to recent buffer
 nnoremap <silent> <leader><TAB> <cmd>e #<CR>
 
@@ -46,8 +43,6 @@ set pumheight=4
 " Auto commands:
 " Add missing imports on save
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
-" TF format is slow, use vim builtin formatting on save
-autocmd BufWritePre *.tf call CocAction('format')
 " Use Tab to input space for vim script/config
 autocmd FileType vim setlocal expandtab
 " Reduce tab stop width for golang
