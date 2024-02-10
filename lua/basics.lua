@@ -52,6 +52,7 @@ vim.api.nvim_set_keymap('n', '<leader>gp', ':Git pull --ff-only<CR>', {noremap =
 -- Git push to upstream automatically: https://github.com/tpope/vim-fugitive/issues/1272
 vim.api.nvim_set_keymap('n', '<leader>gP', ':Git -c push.default=current push<CR>', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<leader>gc', ':Git checkout master<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap('n', '<leader>gC', ':Git checkout master | Git pull --ff-only<CR>', {noremap = true, silent = false})
 
 -- Plugins
 vim.g["netrw_banner"] = 0

@@ -57,9 +57,17 @@ autocmd FileType gitcommit,conf setlocal textwidth=0
 
 " coc.vim
 nnoremap <silent> <space><space> <cmd>CocList<CR>
-nnoremap <silent> <space>c       <cmd>CocList commands<CR>
-nnoremap <silent> <space>g       <cmd>CocList gstatus<CR>
-nnoremap <silent> <space>b       <cmd>CocList branches<CR>
+" Show commands
+nnoremap <silent><nowait> <space>c       <cmd>CocList commands<CR>
+" Show all diagnostics
+nnoremap <silent><nowait> <space>a  <cmd>CocList diagnostics<CR>
+" Find symbol of current document
+nnoremap <silent><nowait> <space>o  <cmd>CocList outline<CR>
+" Search workspace symbols
+nnoremap <silent><nowait> <space>s  <cmd>CocList symbols<CR>
+" Git
+nnoremap <silent><nowait> <space>g       <cmd>CocList gchunks<CR>
+nnoremap <silent><nowait> <space>b       <cmd>CocList branches<CR>
 
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
