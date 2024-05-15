@@ -1,60 +1,58 @@
 {
-	"list.normalMappings": {
-		"<C-j>": "do:exit",
-		"<C-k>": "do:exit"
-	},
-	"highlight.colors.enable": true,
-	"diagnostic.checkCurrentLine": true,
-	"workspace.workspaceFolderCheckCwd": false,
-	"workspace.bottomUpFiletypes": [
-		"*"
-	],
-	"json.format.enable": true,
-	"[lua]": {
-		"inlayHint.enable": false
-	},
-	"[go][python][json][jsonc][rust]": {
-		"coc.preferences.formatOnSave": true
-	},
-	"[terraform]": {
-		"coc.preferences.formatOnSave": false
-	},
-	"languageserver": {
-		"terraform": {
-			"command": "terraform-ls",
-			"args": [
-				"serve"
-			],
-			"filetypes": [
-				"terraform",
-				"tf"
-			],
-			"initializationOptions": {},
-			"settings": {},
-			"rootPatterns": [
-				"service.tf",
-				".git",
-				".hg",
-				".vim",
-				".projections.json"
-			]
-		}
-	},
-	"go.goplsEnv": {
-		"GO111MODULE": "off"
-	},
-	"go.goplsOptions": {
-		"analyses": {
-			"shadow": true
-		},
-		"expandWorkspaceToModule": false,
-		"directoryFilters": [
-			"-**/vendor"
-		]
-	},
-	"clangd.fallbackFlags": [
-		"-std=gnu++20"
-	],
-	"git.addGBlameToBufferVar": true,
-	"snippets.ultisnips.pythonPrompt": false
+  "list.normalMappings": {
+    "<C-j>": "do:exit",
+    "<C-k>": "do:exit"
+  },
+  "highlight.colors.enable": true,
+  "diagnostic.checkCurrentLine": true,
+  "workspace.workspaceFolderCheckCwd": false,
+  "workspace.bottomUpFiletypes": [
+    "*"
+  ],
+  "json.format.enable": true,
+  "[lua]": {
+    "inlayHint.enable": false
+  },
+  "[go][python][json][jsonc][rust][lua]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "go.tests": {
+    "generateFlags": []
+  },
+  "go.goplsPath": "/Users/siliang.cao/gopath/bin/gopls",
+  "[terraform]": {
+    "coc.preferences.formatOnSave": false
+  },
+  "languageserver": {
+    "sourcekit-lsp": {
+      "filetypes": [
+        "swift"
+      ],
+      "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp",
+    }
+  },
+  "go.goplsEnv": {
+    "GO111MODULE": "off"
+  },
+  "go.goplsOptions": {
+    "analyses": {
+      "shadow": true
+    },
+    "expandWorkspaceToModule": false,
+    "buildFlags": [
+      "-tags=integration"
+    ],
+    "directoryFilters": [
+      "-**/vendor"
+    ]
+  },
+  "go.tags": {
+    "transform": "camelcase"
+  },
+  "clangd.fallbackFlags": [
+    "-std=gnu++20"
+  ],
+  "git.addGBlameToBufferVar": true,
+  "colors.enable": true,
+  "snippets.ultisnips.pythonPrompt": false
 }
