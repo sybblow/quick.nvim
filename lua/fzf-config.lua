@@ -1,3 +1,10 @@
+local actions = require "fzf-lua.actions"
+
+function git_gbrowse_commit(selected, _)
+    local commit_hash = selected[1]:match("[^ ]+")
+    vim.cmd('GBrowse ' .. commit_hash)
+end
+
 require('fzf-lua').setup {
 	files = {
 		-- previewer = "bat",
@@ -13,6 +20,20 @@ require('fzf-lua').setup {
 		branches = {
 			preview = 'git log --pretty="-%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset" -n 20 --color=always {1}',
 		},
+        commits = {
+            actions = {
+                -- remove `exec_silent` or set to `false` to exit after yank
+                ["ctrl-y"]  = { fn = actions.git_yank_commit, exec_silent = false },
+                ["ctrl-l"]  = { fn = git_gbrowse_commit, exec_silent = true },
+            },
+        },
+        bcommits = {
+            actions = {
+                -- remove `exec_silent` or set to `false` to exit after yank
+                ["ctrl-y"]  = { fn = actions.git_yank_commit, exec_silent = false },
+                ["ctrl-l"]  = { fn = git_gbrowse_commit, exec_silent = true },
+            },
+        },
 	},
 
     winopts = {

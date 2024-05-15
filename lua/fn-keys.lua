@@ -1,7 +1,8 @@
 -- Find buffer
 vim.api.nvim_set_keymap('i', '<F2>', "<Esc><cmd>lua require('fzf-lua').buffers()<CR>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<F2>', "<cmd>lua require('fzf-lua').buffers()<CR>", { noremap = true })
-vim.api.nvim_set_keymap('v', '<F2>', "<cmd>lua require('fzf-lua').buffers()<CR>", { noremap = true })
+-- override
+vim.api.nvim_set_keymap('x', '<F2>', ":GBrowse<CR>", { noremap = true, silent = false })
 -- Find file
 vim.api.nvim_set_keymap('i', '<F3>', "<Esc><cmd>lua require('fzf-lua').files()<CR>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<F3>', "<cmd>lua require('fzf-lua').files()<CR>", { noremap = true })

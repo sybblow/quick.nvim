@@ -40,6 +40,7 @@ vim.api.nvim_set_keymap('n', 'tk', ':tabprev<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'tj', ':tabnext<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'to', ':tabo<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-S>', ':%s/', { noremap = true })
+vim.api.nvim_set_keymap('n', '<M-S>', ':%s/', { noremap = true })
 --vim.api.nvim_set_keymap('n', '<C-N>', ":Lexplore<CR> :vertical resize 30<CR>", { noremap = true })
 --vim.api.nvim_set_keymap("n", "<leader>t", ":sp<CR> :term<CR> :resize 20N<CR> i", {noremap = true, silent = true})
 --vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap = true, silent = true})
@@ -53,6 +54,8 @@ vim.api.nvim_set_keymap('n', '<leader>gp', ':Git pull --ff-only<CR>', {noremap =
 vim.api.nvim_set_keymap('n', '<leader>gP', ':Git -c push.default=current push<CR>', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<leader>gc', ':Git checkout master<CR>', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<leader>gC', ':Git checkout master | Git pull --ff-only<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap('n', '<leader>go', ':lua gbrowse_register()<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap('n', '<C-L>', ':lua gbrowse_register()<CR>', {noremap = true, silent = false})
 
 -- Plugins
 vim.g["netrw_banner"] = 0
@@ -71,6 +74,7 @@ vim.g.enable_spelunker_vim = 0
 
 vim.g.rooter_manual_only = 1
 
+-- tweaks
 vim.cmd [[
     autocmd TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
 
@@ -89,12 +93,23 @@ function goto_last_pos()
   end
 end
 
+vim.cmd [[
+  autocmd FileType json setlocal expandtab
+  autocmd FileType json setlocal shiftwidth=2
+  autocmd FileType json setlocal tabstop=2
+]]
+
 --only available in Neovim 0.7.0+
 --vim.api.nvim_add_user_command('OpenInIDEA', 'lua open_with_external_tool()', {})
 vim.cmd[[command! OpenInIDEA lua open_with_external_tool()]]
 function open_with_external_tool()
 	local linenr = vim.api.nvim_win_get_cursor(0)[1]
 	vim.cmd('silent! !goland --line ' .. tostring(linenr) .. ' "%"')
+end
+
+function gbrowse_register()
+	local cliptext = vim.fn.getreg('"')
+	vim.cmd('GBrowse ' .. cliptext)
 end
 
 vim.cmd('source ' .. vim.fn.stdpath('config') .. '/lua/config.vim')
