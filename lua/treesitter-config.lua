@@ -1,15 +1,10 @@
 require'nvim-treesitter.configs'.setup {
   -- List of parsers to ignore installing
   ignore_install = { "norg" },
-  context_commentstring = {
-    enable = true
-  },
-  highlight = {
-    enable = true
-  },
-  indent = {
-    enable = true
-  }
+  ensure_installed = "all",
+  highlight = { enable = true },
+  indent = { enable = true },
+  autotag = { enable = true, enable_close_on_slash = false },
 }
 
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
