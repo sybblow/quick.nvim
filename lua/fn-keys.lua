@@ -32,13 +32,6 @@ vim.api.nvim_set_keymap('c', '<F8>', '<nop>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<F8>', '<nop>', { noremap = true, silent = true })
 
 -- Command Key Copy/Paste
--- Command-D is enhanced Paste
-vim.api.nvim_set_keymap('i', '<F11>', "<C-R>+", { noremap = true, silent = false })
-vim.api.nvim_set_keymap('c', '<F11>', "<C-R>+", { noremap = true, silent = false })
-vim.api.nvim_set_keymap('n', '<F11>', "a<C-R>+<Esc>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap('v', '<F11>', '"+gp', { noremap = true, silent = false })
-vim.api.nvim_set_keymap('t', '<F11>', '<C-\\><C-n>"+gpa', { noremap = true, silent = false })
-
 -- use command + c
 vim.api.nvim_set_keymap('x', '<F12>', ":OSCYankVisual<CR>gv", { noremap = true, silent = false })
 vim.api.nvim_set_keymap('s', '<F12>', "<C-g><cmd>OSCYankVisual<CR>gv<C-g>", { noremap = true, silent = false })
