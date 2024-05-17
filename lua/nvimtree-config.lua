@@ -1,25 +1,5 @@
 vim.g.nvim_tree_auto_ignore_ft = 'startify'
 
-local function global_cd(node)
-  vim.cmd("cd " .. vim.fn.fnameescape(node.absolute_path))
-end
-
-local function on_attach(bufnr)
-  local api = require('nvim-tree.api')
-
-  local function opts(desc)
-    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-  end
-
-  -- Mappings migrated from view.mappings.list
-  --
-  -- You will need to insert "your code goes here" for any mappings with a custom action_cb
-  vim.keymap.set('n', '<C-o>', function()
-    local node = api.tree.get_node_under_cursor()
-	global_cd(node)
-  end, opts('global_cd'))
-end
-
 -- following options are the default
 require'nvim-tree'.setup {
   -- disables git
@@ -33,8 +13,6 @@ require'nvim-tree'.setup {
   hijack_netrw        = true,
   -- open the tree when running this setup function
   open_on_setup       = false,
-  -- will not open on setup if the filetype is in this list
-  ignore_ft_on_setup  = {},
   -- opens the tree when changing/opening a new tab if the tree wasn't previously opened
   open_on_tab         = false,
   -- hijack the cursor in the tree to put it at the start of the filename
