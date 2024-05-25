@@ -123,12 +123,6 @@ vim.cmd[[
   autocmd FileType gitcommit,conf setlocal textwidth=0
 ]]
 
--- Configure rootPatterns for specified filetype: https://github.com/neoclide/coc.nvim/wiki/Using-workspaceFolders#persist-workspace-folders
-vim.cmd[[
-  autocmd FileType go,gomod let b:coc_root_patterns = [ "config-ci.json", "go.mod", ".git", ".hg", ".vim", ".projections.json" ]
-  autocmd FileType tf let b:coc_root_patterns = [ "service.tf", ".git", ".hg", ".vim", ".projections.json" ]
-]]
-
 -- keymaps
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
@@ -145,49 +139,5 @@ map('v', '<leader>p', '"_c<C-r>"<Esc>', opts)
 -- close all buffers
 map('n', '<leader>bad', ':bufdo Bclose<CR>', opts)
 map('n', '<leader>bD', ':Bclose!<CR>', opts)
-
--- Config for coc.nvim
-vim.g.coc_global_extensions = {
-  'coc-go',
-  'coc-json',
-  'coc-pyright',
-  'coc-tsserver',
-  'coc-clangd',
-  'coc-rust-analyzer',
-  'coc-toml',
-  'coc-protobuf',
-  'coc-vimlsp',
-  'coc-snippets',
-  'coc-pairs',
-  'coc-highlight',
-  'coc-lua',
-  'coc-git',
-  'coc-deno',
-  'coc-snippets',
-}
--- Coc keymappings
-map('n', '<space><space>', '<cmd>CocList<CR>', opts)
-map('n', '<space>c', '<cmd>CocList commands<CR>', opts)
-map('n', '<space>a', '<cmd>CocList diagnostics<CR>', opts)
-map('n', '<space>o', '<cmd>CocList outline<CR>', opts)
-map('n', '<space>s', '<cmd>CocList symbols<CR>', opts)
-map('n', '<space>g', '<cmd>CocList gchunks<CR>', opts)
-map('n', '<space>b', '<cmd>CocList branches<CR>', opts)
--- Map function and class text objects
--- NOTE: Requires 'textDocument.documentSymbol' support from the language server
-map('x', 'if', '<Plug>(coc-funcobj-i)', opts)
-map('o', 'if', '<Plug>(coc-funcobj-i)', opts)
-map('x', 'af', '<Plug>(coc-funcobj-a)', opts)
-map('o', 'af', '<Plug>(coc-funcobj-a)', opts)
-map('x', 'ic', '<Plug>(coc-classobj-i)', opts)
-map('o', 'ic', '<Plug>(coc-classobj-i)', opts)
-map('x', 'ac', '<Plug>(coc-classobj-a)', opts)
-map('o', 'ac', '<Plug>(coc-classobj-a)', opts)
--- Apply codeAction to the selected region
--- Example: `<leader>aap` for current paragraph
-map('x', '<leader>a', '<Plug>(coc-codeaction-selected)', { noremap = true })
-map('n', '<leader>a', '<Plug>(coc-codeaction-selected)', { noremap = true })
--- Apply the most preferred quickfix action on the current line.
-map('n', '<leader>qf', '<Plug>(coc-fix-current)', opts)
 
 vim.cmd('source ' .. vim.fn.stdpath('config') .. '/lua/config.vim')
