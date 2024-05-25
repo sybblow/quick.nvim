@@ -84,6 +84,7 @@ require('fzf-lua').setup {
 }
 
 vim.api.nvim_set_keymap('n', '<C-F>', "<cmd>lua require('fzf-lua').grep_curbuf()<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-S>', "<cmd>lua require('fzf-lua').lines()<CR>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-P>', "<cmd>lua require('fzf-lua').builtin()<CR>", { noremap = true })
 vim.api.nvim_set_keymap('v', '<leader>/', "<cmd>lua require('fzf-lua').grep_visual()<CR>", { noremap = true, silent = true })
 -- Searches for the string under your cursor in your current working directory
