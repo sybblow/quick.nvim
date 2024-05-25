@@ -173,5 +173,21 @@ map('n', '<space>o', '<cmd>CocList outline<CR>', opts)
 map('n', '<space>s', '<cmd>CocList symbols<CR>', opts)
 map('n', '<space>g', '<cmd>CocList gchunks<CR>', opts)
 map('n', '<space>b', '<cmd>CocList branches<CR>', opts)
+-- Map function and class text objects
+-- NOTE: Requires 'textDocument.documentSymbol' support from the language server
+map('x', 'if', '<Plug>(coc-funcobj-i)', opts)
+map('o', 'if', '<Plug>(coc-funcobj-i)', opts)
+map('x', 'af', '<Plug>(coc-funcobj-a)', opts)
+map('o', 'af', '<Plug>(coc-funcobj-a)', opts)
+map('x', 'ic', '<Plug>(coc-classobj-i)', opts)
+map('o', 'ic', '<Plug>(coc-classobj-i)', opts)
+map('x', 'ac', '<Plug>(coc-classobj-a)', opts)
+map('o', 'ac', '<Plug>(coc-classobj-a)', opts)
+-- Apply codeAction to the selected region
+-- Example: `<leader>aap` for current paragraph
+map('x', '<leader>a', '<Plug>(coc-codeaction-selected)', { noremap = true })
+map('n', '<leader>a', '<Plug>(coc-codeaction-selected)', { noremap = true })
+-- Apply the most preferred quickfix action on the current line.
+map('n', '<leader>qf', '<Plug>(coc-fix-current)', opts)
 
 vim.cmd('source ' .. vim.fn.stdpath('config') .. '/lua/config.vim')
