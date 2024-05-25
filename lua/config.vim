@@ -1,73 +1,16 @@
-" My Config
-let g:coc_global_extensions = ['coc-go', 'coc-json', 'coc-pyright', 'coc-tsserver', 'coc-clangd', 'coc-rust-analyzer', 'coc-toml', 'coc-protobuf', 'coc-vimlsp', 'coc-snippets', 'coc-pairs', 'coc-highlight', 'coc-lua', 'coc-git', 'coc-deno', 'coc-snippets']
-
-" behavior
-set nowrap
-set ts=4
-set sw=4
-
-" Operations such as yy, D, and P work with the system clipboard.
-"set clipboard=unnamed
-
 " Avoiding the "Hit ENTER to continue" prompts, no need to manually refresh the screen once you return to Vim
 " https://vim.fandom.com/wiki/Avoiding_the_%22Hit_ENTER_to_continue%22_prompts
 command! -nargs=1 Silent
 \   execute 'silent !' . <q-args>
 \ | execute 'redraw!'
 
-" Command Key Copy/Paste
-" use command + c
-nmap <leader>y <Plug>OSCYank
-vnoremap <leader>y :OSCYankVisual<CR>
-
-" Add `:B` command to switch to recent buffer
-nnoremap <silent> <leader><TAB> <cmd>e #<CR>
-
-" delete without yanking
-nnoremap <leader>d "_d
-vnoremap <leader>d "_d
-
-" replace currently selected text with default register
-" without yanking it
-vnoremap <leader>p "_c<C-r>"<Esc>
-
-" Simulate nv-ide:
-" Close All Buffers But This One
-nnoremap <leader>bad :bufdo Bclose<CR>
-nnoremap <leader>bD :Bclose!<CR>
-
-" Small completion window
-set pumheight=4
-
 
 " Auto commands:
 " Add missing imports on save
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
-" Use Tab to input space for vim script/config
-autocmd FileType vim setlocal expandtab
-" Reduce tab stop width for golang
-autocmd FileType go setlocal ts=4
-autocmd FileType go setlocal sw=4
-" Configure rootPatterns for specified filetype: https://github.com/neoclide/coc.nvim/wiki/Using-workspaceFolders#persist-workspace-folders
-autocmd FileType go,gomod let b:coc_root_patterns = [ "config-ci.json", "go.mod", ".git", ".hg", ".vim", ".projections.json" ]
-autocmd FileType tf let b:coc_root_patterns = [ "service.tf", ".git", ".hg", ".vim", ".projections.json" ]
-autocmd FileType gitcommit,conf setlocal nonumber norelativenumber
-autocmd FileType gitcommit,conf setlocal textwidth=0
 
 
 " coc.vim
-nnoremap <silent> <space><space> <cmd>CocList<CR>
-" Show commands
-nnoremap <silent><nowait> <space>c       <cmd>CocList commands<CR>
-" Show all diagnostics
-nnoremap <silent><nowait> <space>a  <cmd>CocList diagnostics<CR>
-" Find symbol of current document
-nnoremap <silent><nowait> <space>o  <cmd>CocList outline<CR>
-" Search workspace symbols
-nnoremap <silent><nowait> <space>s  <cmd>CocList symbols<CR>
-" Git
-nnoremap <silent><nowait> <space>g       <cmd>CocList gchunks<CR>
-nnoremap <silent><nowait> <space>b       <cmd>CocList branches<CR>
 
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)

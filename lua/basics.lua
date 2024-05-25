@@ -1,10 +1,10 @@
 vim.g.mapleader = ";"
 vim.o.number  =true
 vim.o.relativenumber = false
-vim.o.wrap = true
+vim.o.wrap = false
 vim.o.expandtab = false
 vim.o.incsearch = true
-vim.o.tabstop = 2
+vim.o.tabstop = 4
 vim.o.cursorline = true
 vim.o.ignorecase = true
 vim.o.hlsearch = true
@@ -14,7 +14,7 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.scrolloff = 3
 vim.o.errorbells = false
-vim.o.shiftwidth = 2
+vim.o.shiftwidth = 4
 vim.o.numberwidth = 4
 vim.o.termguicolors = true
 -- vim.o.colorcolumn = '80'
@@ -22,6 +22,9 @@ vim.o.showmode = false
 -- vim.o.showtabline = 2
 vim.o.signcolumn = 'yes'
 vim.o.mouse = 'a'
+
+-- small completion window
+vim.o.pumheight = 4
 
 vim.o.spell = false -- disable builtin spell check
 vim.o.spellfile = vim.fn.stdpath('data') .. '/spell/en.utf-8.add'
@@ -111,5 +114,64 @@ function gbrowse_register()
 	local cliptext = vim.fn.getreg('"')
 	vim.cmd('GBrowse ' .. cliptext)
 end
+
+-- Settings per fileType
+vim.cmd[[
+  autocmd FileType go setlocal ts=4 sw=4
+  autocmd FileType vim setlocal expandtab
+  autocmd FileType gitcommit,conf setlocal nonumber norelativenumber
+  autocmd FileType gitcommit,conf setlocal textwidth=0
+]]
+
+-- Configure rootPatterns for specified filetype: https://github.com/neoclide/coc.nvim/wiki/Using-workspaceFolders#persist-workspace-folders
+vim.cmd[[
+  autocmd FileType go,gomod let b:coc_root_patterns = [ "config-ci.json", "go.mod", ".git", ".hg", ".vim", ".projections.json" ]
+  autocmd FileType tf let b:coc_root_patterns = [ "service.tf", ".git", ".hg", ".vim", ".projections.json" ]
+]]
+
+-- keymaps
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+-- switch to recent buffer
+map('n', '<leader><tab>', '<cmd>e #<CR>', opts)
+-- OSC yank to system clipboard
+map('n', '<leader>y', '<Plug>OSCYank', opts)
+map('v', '<leader>y', ':OSCYankVisual<CR>', opts)
+-- delete without yanking
+map('n', '<leader>d', '"_d', opts)
+map('v', '<leader>d', '"_d', opts)
+-- replace currently selected text with default register without yanking it
+map('v', '<leader>p', '"_c<C-r>"<Esc>', opts)
+-- close all buffers
+map('n', '<leader>bad', ':bufdo Bclose<CR>', opts)
+map('n', '<leader>bD', ':Bclose!<CR>', opts)
+
+-- Config for coc.nvim
+vim.g.coc_global_extensions = {
+  'coc-go',
+  'coc-json',
+  'coc-pyright',
+  'coc-tsserver',
+  'coc-clangd',
+  'coc-rust-analyzer',
+  'coc-toml',
+  'coc-protobuf',
+  'coc-vimlsp',
+  'coc-snippets',
+  'coc-pairs',
+  'coc-highlight',
+  'coc-lua',
+  'coc-git',
+  'coc-deno',
+  'coc-snippets',
+}
+-- Coc keymappings
+map('n', '<space><space>', '<cmd>CocList<CR>', opts)
+map('n', '<space>c', '<cmd>CocList commands<CR>', opts)
+map('n', '<space>a', '<cmd>CocList diagnostics<CR>', opts)
+map('n', '<space>o', '<cmd>CocList outline<CR>', opts)
+map('n', '<space>s', '<cmd>CocList symbols<CR>', opts)
+map('n', '<space>g', '<cmd>CocList gchunks<CR>', opts)
+map('n', '<space>b', '<cmd>CocList branches<CR>', opts)
 
 vim.cmd('source ' .. vim.fn.stdpath('config') .. '/lua/config.vim')
