@@ -1,6 +1,6 @@
 -- Find buffer
-vim.api.nvim_set_keymap('i', '<F2>', "<Esc><cmd>lua require('fzf-lua').buffers()<CR>", { noremap = true })
-vim.api.nvim_set_keymap('n', '<F2>', "<cmd>lua require('fzf-lua').buffers()<CR>", { noremap = true })
+vim.api.nvim_set_keymap('i', '<F2>', "<cmd>CocList buffers<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<F2>', "<cmd>CocList buffers<CR>", { noremap = true })
 -- override
 vim.api.nvim_set_keymap('x', '<F2>', ":GBrowse<CR>", { noremap = true, silent = false })
 -- Find file
@@ -16,7 +16,7 @@ vim.api.nvim_set_keymap('i', '<F5>', "<Esc><cmd>lua require('fzf-lua').live_grep
 vim.api.nvim_set_keymap('n', '<F5>', "<cmd>lua require('fzf-lua').live_grep()<CR>", { noremap = true })
 vim.api.nvim_set_keymap('v', '<F5>', "<cmd>lua require('fzf-lua').grep_visual()<CR>", { noremap = true })
 -- Save All
-vim.api.nvim_set_keymap('i', '<F6>', "<Esc><cmd>wa<CR>a", { noremap = true, silent = false })
+vim.api.nvim_set_keymap('i', '<F6>', "<cmd>wa<CR>", { noremap = true, silent = false })
 vim.api.nvim_set_keymap('n', '<F6>', "<cmd>wa<CR>", { noremap = true, silent = false })
 vim.api.nvim_set_keymap('v', '<F6>', "<cmd>wa<CR>", { noremap = true, silent = false })
 -- Show Tree

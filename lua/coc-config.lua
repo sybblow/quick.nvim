@@ -1,4 +1,5 @@
 vim.g.coc_global_extensions = {
+    'coc-list',
     'coc-go',
     'coc-json',
     'coc-pyright',
