@@ -90,3 +90,4 @@ vim.api.nvim_set_keymap('v', '<leader>/', "<cmd>lua require('fzf-lua').grep_visu
 -- Searches for the string under your cursor in your current working directory
 vim.api.nvim_set_keymap('n', '<leader>/', "<cmd>lua require('fzf-lua').grep_cword()<CR>", { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap('n', '<C-Y>', "<cmd>lua require('fzf-lua').git_commits()<CR>", { noremap = true, silent = true })

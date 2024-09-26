@@ -110,5 +110,5 @@ vnoremap <D-g> <cmd>LazyGit<CR>
 tnoremap <D-g> q
 
 " work like Windows GUI
-set selectmode=mouse
+"  set selectmode=mouse
 startinsert

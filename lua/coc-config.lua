@@ -1,5 +1,5 @@
 vim.g.coc_global_extensions = {
-    'coc-list',
+    'coc-lists',
     'coc-go',
     'coc-json',
     'coc-pyright',
@@ -71,7 +71,7 @@ vim.o.backup = false
 vim.o.writebackup = false
 vim.o.updatetime = 300
 
-vim.g.coc_current_word_highlight_delay = 600
+vim.g.coc_current_word_highlight_delay = 200
 
 -- Configure rootPatterns for specified filetype: https://github.com/neoclide/coc.nvim/wiki/Using-workspaceFolders#persist-workspace-folders
 vim.cmd[[
