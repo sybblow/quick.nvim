@@ -9,6 +9,10 @@
   "workspace.bottomUpFiletypes": [
     "*"
   ],
+  "diagnostic.level": "error",
+  "python.formatting.provider": "ruff",
+  "python.linting.ruffEnabled": true,
+  "pyright.disableDiagnostics": false,
   "json.format.enable": true,
   "[lua]": {
     "inlayHint.enable": false
@@ -29,6 +33,12 @@
         "swift"
       ],
       "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp",
+    },
+    "terraform": {
+      "command": "terraform-lsp",
+      "filetypes": [
+        "terraform"
+      ]
     }
   },
   "go.goplsEnv": {

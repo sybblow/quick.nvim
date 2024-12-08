@@ -1,3 +1,5 @@
+-- if vim.g.vscode then return {} end -- determine if Neovim is running in VSCode
+
 -- startify-faq-10: skip Startify at start
 if vim.fn.has('gui_vimr') == 1 then
 	vim.g.startify_disable_at_vimenter = 1

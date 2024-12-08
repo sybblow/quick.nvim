@@ -73,6 +73,10 @@ vim.g.startify_lists = {
   { type = 'bookmarks', header = {'   Bookmarks'}             },
   { type = 'commands',  header = {'   Commands'}              },
 }
+vim.g.startify_bookmarks = {
+  { n = 'zshrc', p = '~/.zshrc' },
+}
+
 vim.g.enable_spelunker_vim = 0
 
 vim.g.rooter_manual_only = 1

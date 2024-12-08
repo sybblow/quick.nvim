@@ -1,12 +1,14 @@
 -- Find buffer
 vim.api.nvim_set_keymap('i', '<F2>', "<cmd>CocList buffers<CR>", { noremap = true })
-vim.api.nvim_set_keymap('n', '<F2>', "<cmd>CocList buffers<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<F2>', "<cmd>CocList --normal buffers<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<S-D-E>', "<cmd>lua require('fzf-lua').buffers()<CR>", { noremap = true })
 -- override
 vim.api.nvim_set_keymap('x', '<F2>', ":GBrowse<CR>", { noremap = true, silent = false })
 -- Find file
 vim.api.nvim_set_keymap('i', '<F3>', "<Esc><cmd>lua require('fzf-lua').files()<CR>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<F3>', "<cmd>lua require('fzf-lua').files()<CR>", { noremap = true })
 vim.api.nvim_set_keymap('v', '<F3>', "<cmd>lua require('fzf-lua').files()<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<S-D-P>', "<cmd>lua require('fzf-lua').commands()<CR>", { noremap = true })
 -- Close
 vim.api.nvim_set_keymap('i', '<F4>', "<cmd>close<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<F4>', "<cmd>close<CR>", { noremap = true, silent = true })
