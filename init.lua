@@ -23,7 +23,10 @@ local lazy_bootstrap = ensure_lazy()
 require('lazy').setup({
     { 'neoclide/coc.nvim', branch = 'release' },
     { 'folke/tokyonight.nvim' },
-    { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate" },
+    {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        dependencies = { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate" },
+    },
     { 'tpope/vim-commentary' },
     { 'ojroques/vim-oscyank' },
     { 'JoosepAlviste/nvim-ts-context-commentstring' },
