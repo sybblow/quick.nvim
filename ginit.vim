@@ -1,10 +1,13 @@
 VimRSetFontAndSize "FiraCode Nerd Font Mono", 13
 
 " disable coc highlight
-CocCurrentWordToggle
+" CocCurrentWordToggle
 
 " turn on Rooter
-RooterToggle
+" RooterToggle
+
+" startify-faq-10: skip Startify at start
+let g:startify_disable_at_vimenter= 1
 
 " improve select all
 xmap <D-a> ae
@@ -15,14 +18,14 @@ cnoremap <D-a> <nop>
 tnoremap <D-a> <nop>
 
 " improve Paste.
-xnoremap <D-v> "+gp
-snoremap <D-v> <C-o>"+gp
-nnoremap <D-v> "+gp
-inoremap <D-v> <cmd>set paste<CR><C-R>+<cmd>set nopaste<CR>
-cnoremap <D-v> <cmd>set paste<CR><C-R>+<cmd>set nopaste<CR>
+" xnoremap <D-v> "+gp
+" snoremap <D-v> <C-o>"+gp
+" nnoremap <D-v> "+gp
+" inoremap <D-v> <cmd>set paste<CR><C-R>+<cmd>set nopaste<CR>
+" cnoremap <D-v> <cmd>set paste<CR><C-R>+<cmd>set nopaste<CR>
 " ':help terminal-input' says:
 " To simulate i_CTRL-R in terminal-mode:
-tnoremap <D-v> <C-\><C-n>"+gpa
+" tnoremap <D-v> <C-\><C-n>"+gpa
 
 " Fix builtin
 inoremap <D-z> <cmd>undo<CR>
@@ -63,6 +66,7 @@ tnoremap <D-e> <F2>
 inoremap <S-D-p> <Esc><cmd>lua require('fzf-lua').builtin()<CR>
 nnoremap <S-D-p> <cmd>lua require('fzf-lua').builtin()<CR>
 vnoremap <S-D-p> <cmd>lua require('fzf-lua').builtin()<CR>
+tnoremap <S-D-p> <F2>
 
 nunmap <C-P>
 nunmap <C-F>
@@ -110,5 +114,5 @@ vnoremap <D-g> <cmd>LazyGit<CR>
 tnoremap <D-g> q
 
 " work like Windows GUI
-"  set selectmode=mouse
-startinsert
+" set selectmode=mouse
+" startinsert
