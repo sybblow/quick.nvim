@@ -23,7 +23,6 @@
   "go.tests": {
     "generateFlags": []
   },
-  "go.goplsPath": "/Users/siliang.cao/gopath/bin/gopls",
   "[terraform]": {
     "coc.preferences.formatOnSave": false
   },

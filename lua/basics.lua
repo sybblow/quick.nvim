@@ -142,6 +142,7 @@ map('v', '<leader>d', '"_d', opts)
 map('v', '<leader>p', '"_c<C-r>"<Esc>', opts)
 -- close all buffers
 map('n', '<leader>bad', ':bufdo Bclose<CR>', opts)
+map('n', '<leader>bd', ':bdelete<CR>', opts)
 map('n', '<leader>bD', ':Bclose!<CR>', opts)
 
 vim.cmd('source ' .. vim.fn.stdpath('config') .. '/lua/config.vim')
