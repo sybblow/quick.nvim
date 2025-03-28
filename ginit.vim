@@ -1,4 +1,6 @@
-VimRSetFontAndSize "FiraCode Nerd Font Mono", 13
+if exists("g:gui_vimr")
+    VimRSetFontAndSize "FiraCode Nerd Font Mono", 13
+endif
 
 " disable coc highlight
 " CocCurrentWordToggle
@@ -34,6 +36,12 @@ vnoremap <D-z> <cmd>undo<CR>
 inoremap <S-D-z> <cmd>redo<CR>
 nnoremap <S-D-z> <cmd>redo<CR>
 vnoremap <S-D-z> <cmd>redo<CR>
+
+" Save All
+inoremap <D-s> <cmd>wa<CR>
+nnoremap <D-s> <cmd>wa<CR>
+vnoremap <D-s> <cmd>wa<CR>
+
 " 2. from document (https://neovim.io/doc/user/visual.html#Select): From Visual mode, press CTRL-G. CTRL-O switches to Visual mode for the duration of one command.
 " it's also said in the doc: https://vi.stackexchange.com/questions/28089/is-it-possible-to-execute-keys-commands-in-select-mode/28090#28090.
 snoremap <D-c> <C-o>"+ygv<C-g>
@@ -58,26 +66,28 @@ nnoremap <D-p> <cmd>lua require('fzf-lua').files()<CR>
 vnoremap <D-p> <cmd>lua require('fzf-lua').files()<CR>
 tnoremap <D-p> <F2>
 
-inoremap <D-e> <Esc><cmd>lua require('fzf-lua').buffers()<CR>
-nnoremap <D-e> <cmd>lua require('fzf-lua').buffers()<CR>
-vnoremap <D-e> <cmd>lua require('fzf-lua').buffers()<CR>
-tnoremap <D-e> <F2>
+" Find buffer
+" nnoremap <S-D-e> <cmd>lua require('fzf-lua').buffers()<CR>
+" tnoremap <S-D-e> <F2>
+inoremap <D-e> <Esc><cmd>CocList buffers<CR>
+nnoremap <D-e> <cmd>CocList --normal buffers<CR>
+
 
 inoremap <S-D-p> <Esc><cmd>lua require('fzf-lua').builtin()<CR>
 nnoremap <S-D-p> <cmd>lua require('fzf-lua').builtin()<CR>
 vnoremap <S-D-p> <cmd>lua require('fzf-lua').builtin()<CR>
 tnoremap <S-D-p> <F2>
 
-nunmap <C-P>
-nunmap <C-F>
+" nunmap <C-P>
+" nunmap <C-F>
 
 inoremap <S-D-f> <Esc><cmd>lua require('fzf-lua').live_grep()<CR>
 nnoremap <S-D-f> <cmd>lua require('fzf-lua').live_grep()<CR>
 vnoremap <S-D-f> <cmd>lua require('fzf-lua').grep_visual()<CR>
 tnoremap <S-D-f> <F2>
 
-inoremap <D-f> <Esc><cmd>lua require('fzf-lua').blines()<CR>
-nnoremap <D-f> <cmd>lua require('fzf-lua').blines()<CR>
+inoremap <D-f> <Esc><cmd>lua require('fzf-lua').lines()<CR>
+nnoremap <D-f> <cmd>lua require('fzf-lua').lines()<CR>
 xmap <D-f> *
 " CTRL-G switches to Visual mode.
 smap <D-f> <C-g>*
