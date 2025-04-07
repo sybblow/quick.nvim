@@ -18,45 +18,47 @@ local lazy_bootstrap = ensure_lazy()
 
 -- install plugins
 require('lazy').setup({
+	-- Code IntelliSense
     { 'neoclide/coc.nvim', branch = 'release' },
-    { 'folke/tokyonight.nvim' },
     {
         "nvim-treesitter/nvim-treesitter-textobjects",
         dependencies = { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate" },
     },
-    { 'tpope/vim-commentary' },
-    { 'ojroques/vim-oscyank' },
-    { 'JoosepAlviste/nvim-ts-context-commentstring' },
-    { 'ThePrimeagen/git-worktree.nvim' },
+	-- Search
+    {
+        'ibhagwan/fzf-lua',
+        dependencies = { 'kyazdani42/nvim-web-devicons' }
+    },
+    -- Spell check
+    { 'kamykn/spelunker.vim' },
+    -- GUI like
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { { 'kyazdani42/nvim-web-devicons', lazy = true } }
     },
     {
-        'ibhagwan/fzf-lua',
-        dependencies = { 'kyazdani42/nvim-web-devicons' }
-    },
-    { 'tpope/vim-surround' },
-    -- Spell check
-    { 'kamykn/spelunker.vim' },
-    -- Explorer
-    {
         'kyazdani42/nvim-tree.lua',
         dependencies = { 'kyazdani42/nvim-web-devicons' }
     },
+    { 'mhinz/vim-startify' },
+    -- Fix vim built-in capabilities
     { 'rbgrouleff/bclose.vim' },
     { 'wincent/terminus' },
-    { 'mhinz/vim-startify' },
+    { 'ojroques/vim-oscyank' },
 
     -- Theme
-    'Mofiqul/vscode.nvim', 'monsonjeremy/onedark.nvim', 'ellisonleao/gruvbox.nvim',
+    'Mofiqul/vscode.nvim', 'monsonjeremy/onedark.nvim', 'ellisonleao/gruvbox.nvim', 'folke/tokyonight.nvim',
     -- Move & Search & replace
     'karb94/neoscroll.nvim', 'nelstrom/vim-visual-star-search',
     'kevinhwang91/nvim-hlslens', 'kana/vim-textobj-user',
     'kana/vim-textobj-entire', 'IngoMeyer441/coc_current_word',
+    { 'tpope/vim-commentary' },
+    { 'JoosepAlviste/nvim-ts-context-commentstring' },
+    { 'tpope/vim-surround' },
     -- Git
     'tpope/vim-fugitive', 'shumphrey/fugitive-gitlab.vim',
     'kdheepak/lazygit.nvim', 'airblade/vim-rooter',
+	'ThePrimeagen/git-worktree.nvim',
     -- Tool
     'vim-test/vim-test', 'bogado/file-line', 'honza/vim-snippets'
 })
