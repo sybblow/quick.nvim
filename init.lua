@@ -50,8 +50,12 @@ require('lazy').setup({
     'Mofiqul/vscode.nvim', 'monsonjeremy/onedark.nvim', 'ellisonleao/gruvbox.nvim', 'folke/tokyonight.nvim',
     -- Move & Search & replace
     'karb94/neoscroll.nvim', 'nelstrom/vim-visual-star-search',
-    'kevinhwang91/nvim-hlslens', 'kana/vim-textobj-user',
-    'kana/vim-textobj-entire', 'IngoMeyer441/coc_current_word',
+    'kevinhwang91/nvim-hlslens',
+    {
+        'kana/vim-textobj-entire',
+        dependencies = { 'kana/vim-textobj-user' }
+    },
+    'IngoMeyer441/coc_current_word',
     { 'tpope/vim-commentary' },
     { 'JoosepAlviste/nvim-ts-context-commentstring' },
     { 'tpope/vim-surround' },
