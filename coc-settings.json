@@ -9,6 +9,15 @@
   "workspace.bottomUpFiletypes": [
     "*"
   ],
+  "workspace.rootPatterns": [
+    "BUILD.bazel",
+    "config-ci.json",
+    "go.mod",
+    ".git",
+    ".hg",
+    ".vim",
+    ".projections.json"
+  ],
   "diagnostic.level": "error",
   "python.formatting.provider": "ruff",
   "python.linting.ruffEnabled": true,

@@ -24,13 +24,16 @@ require('lazy').setup({
         "nvim-treesitter/nvim-treesitter-textobjects",
         dependencies = { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate" },
     },
+
 	-- Search
     {
         'ibhagwan/fzf-lua',
         dependencies = { 'kyazdani42/nvim-web-devicons' }
     },
+
     -- Spell check
     { 'kamykn/spelunker.vim' },
+
     -- GUI like
     {
         'nvim-lualine/lualine.nvim',
@@ -41,6 +44,7 @@ require('lazy').setup({
         dependencies = { 'kyazdani42/nvim-web-devicons' }
     },
     { 'mhinz/vim-startify' },
+
     -- Fix vim built-in capabilities
     { 'rbgrouleff/bclose.vim' },
     { 'wincent/terminus' },
@@ -48,6 +52,7 @@ require('lazy').setup({
 
     -- Theme
     'Mofiqul/vscode.nvim', 'monsonjeremy/onedark.nvim', 'ellisonleao/gruvbox.nvim', 'folke/tokyonight.nvim',
+
     -- Move & Search & replace
     'karb94/neoscroll.nvim', 'nelstrom/vim-visual-star-search',
     'kevinhwang91/nvim-hlslens',
@@ -59,10 +64,12 @@ require('lazy').setup({
     { 'tpope/vim-commentary' },
     { 'JoosepAlviste/nvim-ts-context-commentstring' },
     { 'tpope/vim-surround' },
+
     -- Git
     'tpope/vim-fugitive', 'shumphrey/fugitive-gitlab.vim',
     'kdheepak/lazygit.nvim', 'airblade/vim-rooter',
 	'ThePrimeagen/git-worktree.nvim',
+
     -- Tool
     'vim-test/vim-test', 'bogado/file-line', 'honza/vim-snippets'
 })
