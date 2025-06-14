@@ -23,7 +23,7 @@ vim.api.nvim_set_keymap("n", "<leader>l", ":CocCommand eslint.executeAutofix<CR>
 vim.api.nvim_set_keymap("n", "gd", "<Plug>(coc-definition)", {silent = true})
 vim.api.nvim_set_keymap("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
 vim.api.nvim_set_keymap("n", "gi", "<Plug>(coc-implementation)", {silent = true})
-vim.api.nvim_set_keymap("n", "gr", "<Plug>(coc-references)", {silent = true})
+vim.api.nvim_set_keymap("n", "gH", "<Plug>(coc-references)", {silent = true})
 vim.api.nvim_set_keymap("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
 vim.api.nvim_set_keymap("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
 vim.api.nvim_set_keymap("n", "K", ":call CocActionAsync('doHover')<CR>", {silent = true, noremap = true})
@@ -78,3 +78,9 @@ vim.cmd[[
   autocmd FileType go,gomod let b:coc_root_patterns = [ "config-ci.json", "go.mod", ".git", ".hg", ".vim", ".projections.json" ]
   autocmd FileType tf let b:coc_root_patterns = [ "service.tf", ".git", ".hg", ".vim", ".projections.json" ]
 ]]
+
+vim.api.nvim_set_keymap('n', 'grr', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'gri', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'gra', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'grn', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', 'gra', '<Nop>', { noremap = true, silent = true })
